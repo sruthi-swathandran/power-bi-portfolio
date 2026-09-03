@@ -1,0 +1,23 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-IN
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation PBI_QueryOrder = ["Projects","Measures (2)","Key Measures"]
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Projects
+ref table DateTableTemplate_a0ab5cb1-cc64-48c4-b7a0-aa936d0e0040
+ref table LocalDateTable_09ddbf5b-08f3-4682-967e-fff6a5f4bde6
+ref table LocalDateTable_586c2d1a-a8d4-490c-a736-9dc39be73f0c
+ref table 'Date Table'
+ref table 'Key Measures'
+
+ref cultureInfo en-US
+

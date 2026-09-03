@@ -1,0 +1,172 @@
+table Projects
+	lineageTag: 6627ab4b-70a4-4fbb-9ef7-955c98259e01
+
+	column ID
+		dataType: string
+		lineageTag: b22031e2-ca60-4026-89fa-c191a965a48e
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 308886d4-70a0-40d6-92e4-ec750e561eb6
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: e9c6a81d-0c46-4fb6-945f-32cad58b0cb5
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Subcategory
+		dataType: string
+		lineageTag: ac0ddb6d-ea7f-4e58-b0b9-0b447d538b54
+		summarizeBy: none
+		sourceColumn: Subcategory
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 8739bddf-dcd7-4cf4-8737-7a4cc54dfef9
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Launched
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 44fa7f04-33b5-4a75-a1d4-2193370d2645
+		summarizeBy: none
+		sourceColumn: Launched
+
+		variation Variation
+			isDefault
+			relationship: c1d40abd-42c4-41a6-9e0a-336028022da9
+			defaultHierarchy: LocalDateTable_09ddbf5b-08f3-4682-967e-fff6a5f4bde6.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column Deadline
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 436816b5-080d-4481-ba75-452e95402616
+		summarizeBy: none
+		sourceColumn: Deadline
+
+		variation Variation
+			isDefault
+			relationship: a570dcdd-653a-44b5-adf1-1b63eb69df0f
+			defaultHierarchy: LocalDateTable_586c2d1a-a8d4-490c-a736-9dc39be73f0c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Goal
+		dataType: int64
+		formatString: 0
+		lineageTag: af7ff756-c3d6-4edb-9244-6be09498e3ec
+		summarizeBy: sum
+		sourceColumn: Goal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pledged
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bd21dc7-c891-4e5b-9135-af4abb71c469
+		summarizeBy: sum
+		sourceColumn: Pledged
+
+		annotation SummarizationSetBy = Automatic
+
+	column Backers
+		dataType: int64
+		formatString: 0
+		lineageTag: 06482157-b1de-4dc9-abe4-11eb81b62441
+		summarizeBy: sum
+		sourceColumn: Backers
+
+		annotation SummarizationSetBy = Automatic
+
+	column State
+		dataType: string
+		lineageTag: e5331caf-9eb6-48d8-86e0-468f5a69dcd5
+		summarizeBy: none
+		sourceColumn: State
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Launch Date'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: b29d333e-02bd-4a37-a3f4-4454f858e335
+		summarizeBy: none
+		sourceColumn: Launch Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Duration Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: aba72ef5-af99-4fdd-98df-bdbabc571052
+		summarizeBy: sum
+		sourceColumn: Duration Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goal Band'
+		dataType: string
+		lineageTag: 7b638acc-1874-45a7-8540-7988846d42ed
+		summarizeBy: none
+		sourceColumn: Goal Band
+		sortByColumn: 'Goal Band Sort'
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Goal Band Sort'
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: b7333e8c-ea9c-40aa-8d0c-5dd08ebfdc55
+		summarizeBy: sum
+		sourceColumn: Goal Band Sort
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Projects = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Projects\power-bi-portfolio\02-kickstarter-projects\data\kickstarter_projects.csv"),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"ID", type text}, {"Name", type text}, {"Category", type text}, {"Subcategory", type text}, {"Country", type text}, {"Launched", type datetime}, {"Deadline", type date}, {"Goal", Int64.Type}, {"Pledged", Int64.Type}, {"Backers", Int64.Type}, {"State", type text}}),
+				    #"Added Custom" = Table.AddColumn(#"Changed Type", "Launch Date", each Date.From([Launched])),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"Launch Date", type date}}),
+				    #"Added Custom1" = Table.AddColumn(#"Changed Type1", "Duration Days", each Duration.Days([Deadline] - Date.From([Launched]))),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Added Custom1",{{"Duration Days", Int64.Type}}),
+				    #"Added Conditional Column" = Table.AddColumn(#"Changed Type2", "Goal Band", each if [Goal] < 1000 then "Under $1K" else if [Goal] < 5000 then "$1K to $5K" else if [Goal] < 10000 then "$5K to $10K" else if [Goal] < 25000 then "$10K to $25K" else if [Goal] < 50000 then "$25K to $50K" else if [Goal] < 100000 then "$50K to $100K" else "$100K+"),
+				    #"Added Conditional Column1" = Table.AddColumn(#"Added Conditional Column", "Goal Band Sort", each if [Goal] < 1000 then 1 else if [Goal] < 5000 then 2 else if [Goal] < 10000 then 3 else if [Goal] < 25000 then 4 else if [Goal] < 50000 then 5 else if [Goal] < 100000 then 6 else 7),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Added Conditional Column1",{{"Goal Band Sort", Int64.Type}})
+				in
+				    #"Changed Type3"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

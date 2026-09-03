@@ -1,0 +1,79 @@
+table 'Date Table'
+	lineageTag: ef42f5ec-96fc-4192-a488-661608efcbd8
+	dataCategory: Time
+
+	column Date
+		isKey
+		formatString: General Date
+		lineageTag: f6b6b4bb-08b7-479e-846b-ca4a700dbcfa
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Date]
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		formatString: 0
+		lineageTag: d32cc9d1-dee3-4382-8743-b4cfbfbf46e6
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Year]
+
+		annotation SummarizationSetBy = User
+
+	column Quarter
+		lineageTag: 790ee202-b12b-474f-a23d-e87aaef39290
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Quarter]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Number'
+		formatString: 0
+		lineageTag: 6176af79-ddc8-4a5e-ad6b-cf920a6af342
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Number]
+
+		annotation SummarizationSetBy = User
+
+	column Month
+		lineageTag: 91af56dc-e411-42b0-9888-be59acd2cbd2
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month]
+		sortByColumn: 'Month Number'
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year'
+		lineageTag: d21b7086-d03b-4b82-a617-5574aa6726e0
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Year]
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Month Year Sort'
+		formatString: 0
+		lineageTag: 2be869c3-4a6a-4896-9774-45feb411a797
+		summarizeBy: none
+		isNameInferred
+		sourceColumn: [Month Year Sort]
+
+		annotation SummarizationSetBy = User
+
+	partition 'Date Table' = calculated
+		mode: import
+		source =
+				ADDCOLUMNS(CALENDAR(DATE(2009,1,1), DATE(2018,12,31)),
+				"Year", YEAR([Date]),
+				"Quarter", "Q" & QUARTER([Date]),
+				"Month Number", MONTH([Date]),
+				"Month", FORMAT([Date], "mmm"),
+				"Month Year", FORMAT([Date], "mmm yyyy"),
+				"Month Year Sort", YEAR([Date])* 100 + MONTH([Date]))
+
+	annotation PBI_Id = 74d4d97378ea44f8aa9f86e3da8a9ed4
+

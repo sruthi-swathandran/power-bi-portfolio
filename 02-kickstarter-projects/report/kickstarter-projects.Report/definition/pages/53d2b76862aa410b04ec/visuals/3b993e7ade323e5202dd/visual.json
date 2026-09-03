@@ -1,0 +1,36 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
+  "name": "3b993e7ade323e5202dd",
+  "position": {
+    "x": 30.15197568389058,
+    "y": 12.644376899696049,
+    "z": 3000,
+    "height": 45.714285714285715,
+    "width": 1240.1215805471124,
+    "tabOrder": 3000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Timing and geography. Countries shown have 1,000 or more projects. Duration is deadline minus launch date, so Kickstarter's default 30-day campaign records as 29 days.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
