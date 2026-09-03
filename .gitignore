@@ -1,0 +1,43 @@
+# ---- Power BI binaries ------------------------------------------------------
+# .pbix is a binary archive: git cannot diff it, every save stores a full new
+# copy, and GitHub rejects files over 100 MB. Save as .pbip instead
+# (File > Save as > Power BI project) so the report and model are stored as
+# readable text/JSON that git can version properly.
+*.pbix
+*.pbit
+
+# Power BI cache and temp artefacts
+*.pbix.bak
+.pbi/
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+**/*.abf
+**/CacheFiles/
+**/AnalysisServicesWorkspace*/
+
+# ---- Data files -------------------------------------------------------------
+# Raw datasets are large and publicly available. Never commit them.
+data/
+*.csv
+*.tsv
+*.zip
+*.gz
+*.xlsx
+
+# Exception: keep data dictionaries and small lookup tables
+!**/docs/*.csv
+!**/*_data_dictionary.csv
+!**/reference/*.csv
+
+# ---- Credentials ------------------------------------------------------------
+.env
+.env.*
+credentials.*
+connection.json
+
+# ---- Editors & OS -----------------------------------------------------------
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini

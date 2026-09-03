@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "kickstarter-projects"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "be4a5874-3c1b-4337-a1b9-82e983374ab5"
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.59\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Overview",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "943d3e619c586a366192",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"071bc9a7bebd45a3f0a0\",\"layouts\":[{\"id\":0,\"position\":{\"x\":272.3404255319149,\"y\":35.01519756838906,\"z\":5000,\"width\":239.27051671732525,\"height\":114.77203647416414,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Key Measures.Success Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"},\"Name\":\"Key Measures.Success Rate\",\"NativeReferenceName\":\"Success Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 114.77,
+          "width": 239.27,
+          "x": 272.34,
+          "y": 35.02,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"22ccffdeb7d68680335e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":10,\"width\":1170,\"height\":40,\"z\":7000,\"tabOrder\":7000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Kickstarter platform overview, 2009 to 2018. Cards show all 374,853 projects; trend charts exclude 2018, which holds only two days of data.\",\"textStyle\":{\"fontWeight\":\"bold\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 40.00,
+          "width": 1170.00,
+          "x": 20.00,
+          "y": 10.00,
+          "z": 7000.00
+        },
+        {
+          "config": "{\"name\":\"99c70762c4c9593ea0e1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.425531914893618,\"y\":35.01519756838906,\"z\":2000,\"width\":239.27051671732525,\"height\":114.77203647416414,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Key Measures.Total Projects\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"},\"Name\":\"Key Measures.Total Projects\",\"NativeReferenceName\":\"Total Projects\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 114.77,
+          "width": 239.27,
+          "x": 20.43,
+          "y": 35.02,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9cb37c933f9f7fe80e09\",\"layouts\":[{\"id\":0,\"position\":{\"x\":815.0759878419453,\"y\":35.01519756838906,\"z\":3000,\"width\":239.27051671732525,\"height\":114.77203647416414,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Key Measures.Total Backers\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Backings\"},\"Name\":\"Key Measures.Total Backers\",\"NativeReferenceName\":\"Total Backings\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Backings\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 114.77,
+          "width": 239.27,
+          "x": 815.08,
+          "y": 35.02,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"a956fe2ea95176994f8e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":555.3799392097264,\"y\":35.01519756838906,\"z\":4000,\"width\":239.27051671732525,\"height\":114.77203647416414,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Key Measures.Total Pledged\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Pledged\"},\"Name\":\"Key Measures.Total Pledged\",\"NativeReferenceName\":\"Total Pledged\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Pledged\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 114.77,
+          "width": 239.27,
+          "x": 555.38,
+          "y": 35.02,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"c40b667c89f8fb1d9823\",\"layouts\":[{\"id\":0,\"position\":{\"x\":21.398176291793312,\"y\":449.3617021276596,\"z\":1000,\"width\":1239.148936170213,\"height\":270.3951367781155,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"lineChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date Table.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Key Measures.Backings per Project\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date Table\",\"Type\":0},{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"Date Table.Year\",\"NativeReferenceName\":\"Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Backings per Project\"},\"Name\":\"Key Measures.Backings per Project\",\"NativeReferenceName\":\"Backings per Project\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Backings per Project\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Support per project fell a third in 2014 and has not fully recovered'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date Table\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date Table\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 270.40,
+          "width": 1239.15,
+          "x": 21.40,
+          "y": 449.36,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"d3dbbdb6b978f3ec5591\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1040.729483282675,\"y\":35.01519756838906,\"z\":6000,\"width\":239.27051671732525,\"height\":114.77203647416414,\"tabOrder\":6000}}],\"singleVisual\":{\"visualType\":\"card\",\"projections\":{\"Values\":[{\"queryRef\":\"Key Measures.Median Goal\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Median Goal\"},\"Name\":\"Key Measures.Median Goal\",\"NativeReferenceName\":\"Median Goal\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Median Goal\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 114.77,
+          "width": 239.27,
+          "x": 1040.73,
+          "y": 35.02,
+          "z": 6000.00
+        },
+        {
+          "config": "{\"name\":\"e7e677c02dbd13d86fe7\",\"layouts\":[{\"id\":0,\"position\":{\"x\":21.398176291793312,\"y\":179.93920972644378,\"z\":0,\"width\":1239.148936170213,\"height\":269.42249240121583,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"lineStackedColumnComboChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Date Table.Year\",\"active\":true}],\"Y\":[{\"queryRef\":\"Key Measures.Total Projects\"}],\"Y2\":[{\"queryRef\":\"Key Measures.Success Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date Table\",\"Type\":0},{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"},\"Name\":\"Date Table.Year\",\"NativeReferenceName\":\"Year\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"},\"Name\":\"Key Measures.Total Projects\",\"NativeReferenceName\":\"Total Projects\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"},\"Name\":\"Key Measures.Success Rate\",\"NativeReferenceName\":\"Success Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"valueAxis\":[{\"properties\":{\"start\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"secStart\":{\"expr\":{\"Literal\":{\"Value\":\"0D\"}}},\"secTitleText\":{\"expr\":{\"Literal\":{\"Value\":\"''\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Volume peaked in 2015, success rate bottomed in the same year'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Date Table\"}},\"Property\":\"Year\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"Date Table\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":3,\"Left\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Year\"}},\"Right\":{\"Literal\":{\"Value\":\"2018L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 269.42,
+          "width": 1239.15,
+          "x": 21.40,
+          "y": 179.94,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Catogory",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "e203921a08593b25e282",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"33460f51fe4c85791414\",\"layouts\":[{\"id\":0,\"position\":{\"x\":19.45288753799392,\"y\":434.77203647416417,\"z\":2000,\"width\":1240.1215805471124,\"height\":284.98480243161094,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"Key Measures.Median Goal\",\"active\":true}],\"Y\":[{\"queryRef\":\"Key Measures.Success Rate\"}],\"Size\":[{\"queryRef\":\"Key Measures.Total Projects\"}],\"Category\":[{\"queryRef\":\"Projects.Subcategory\",\"active\":true}],\"Series\":[{\"queryRef\":\"Projects.Category\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0},{\"Name\":\"p\",\"Entity\":\"Projects\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Median Goal\"},\"Name\":\"Key Measures.Median Goal\",\"NativeReferenceName\":\"Median Goal\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"},\"Name\":\"Key Measures.Success Rate\",\"NativeReferenceName\":\"Success Rate\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"},\"Name\":\"Key Measures.Total Projects\",\"NativeReferenceName\":\"Total Projects\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Subcategory\"},\"Name\":\"Projects.Subcategory\",\"NativeReferenceName\":\"Subcategory\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Category\"},\"Name\":\"Projects.Category\",\"NativeReferenceName\":\"Category\"}]},\"drillFilterOtherVisuals\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"logAxisScale\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}},\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Subcategories asking for more succeed less, though the relationship is loose'\"}}}}}]}}}",
+          "filters": "[{\"expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Entity\":\"Key Measures\"}},\"Property\":\"Total Projects\"}},\"filter\":{\"Version\":2,\"From\":[{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Where\":[{\"Condition\":{\"Comparison\":{\"ComparisonKind\":2,\"Left\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Projects\"}},\"Right\":{\"Literal\":{\"Value\":\"500L\"}}}}}]},\"type\":\"Advanced\",\"howCreated\":0,\"isHiddenInViewMode\":false}]",
+          "height": 284.98,
+          "width": 1240.12,
+          "x": 19.45,
+          "y": 434.77,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"8c03b43fb5b349ec0fd9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":640,\"y\":44.74164133738602,\"z\":1000,\"width\":619.5744680851064,\"height\":390.0303951367781,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Projects.Category\",\"active\":true}],\"Y\":[{\"queryRef\":\"Key Measures.Total Pledged\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Projects\",\"Type\":0},{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Category\"},\"Name\":\"Projects.Category\",\"NativeReferenceName\":\"Category\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Pledged\"},\"Name\":\"Key Measures.Total Pledged\",\"NativeReferenceName\":\"Total Pledged\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Total Pledged\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"21L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'The categories raising the most money succeed least often'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 390.03,
+          "width": 619.57,
+          "x": 640.00,
+          "y": 44.74,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"9d76fb927f99c20682ad\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20.425531914893618,\"y\":44.74164133738602,\"z\":0,\"width\":600.1215805471124,\"height\":390.0303951367781,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Projects.Category\",\"active\":true}],\"Y\":[{\"queryRef\":\"Key Measures.Success Rate\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"p\",\"Entity\":\"Projects\",\"Type\":0},{\"Name\":\"k\",\"Entity\":\"Key Measures\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"p\"}},\"Property\":\"Category\"},\"Name\":\"Projects.Category\",\"NativeReferenceName\":\"Category\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"},\"Name\":\"Key Measures.Success Rate\",\"NativeReferenceName\":\"Success Rate\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"k\"}},\"Property\":\"Success Rate\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true,\"objects\":{\"categoryAxis\":[{\"properties\":{\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"8D\"}}},\"maxMarginFactor\":{\"expr\":{\"Literal\":{\"Value\":\"17L\"}}}}}]},\"vcObjects\":{\"title\":[{\"properties\":{\"text\":{\"expr\":{\"Literal\":{\"Value\":\"'Dance and Theater succeed nearly three times as often as Technology'\"}}},\"fontSize\":{\"expr\":{\"Literal\":{\"Value\":\"11D\"}}},\"bold\":{\"expr\":{\"Literal\":{\"Value\":\"true\"}}}}}],\"spacing\":[{\"properties\":{\"verticalSpacing\":{\"expr\":{\"Literal\":{\"Value\":\"3D\"}}}}}]}}}",
+          "filters": "[]",
+          "height": 390.03,
+          "width": 600.12,
+          "x": 20.43,
+          "y": 44.74,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"ba36dea7ac70ccdecbea\",\"layouts\":[{\"id\":0,\"position\":{\"x\":20,\"y\":10,\"width\":1170,\"height\":30,\"z\":3000,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Category performance. Scatter shows subcategories with 500 or more projects; success rate excludes cancelled and live campaigns.\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"10.5pt\"}}]}]}}]}}}",
+          "filters": "[]",
+          "height": 30.00,
+          "width": 1170.00,
+          "x": 20.00,
+          "y": 10.00,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
