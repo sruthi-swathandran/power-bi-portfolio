@@ -1,13 +1,3 @@
-relationship c1d40abd-42c4-41a6-9e0a-336028022da9
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Projects.Launched
-	toColumn: LocalDateTable_09ddbf5b-08f3-4682-967e-fff6a5f4bde6.Date
-
-relationship a570dcdd-653a-44b5-adf1-1b63eb69df0f
-	joinOnDateBehavior: datePartOnly
-	fromColumn: Projects.Deadline
-	toColumn: LocalDateTable_586c2d1a-a8d4-490c-a736-9dc39be73f0c.Date
-
 relationship cca5f5ff-4df3-9b8a-62aa-f472151d39f2
 	fromColumn: Projects.'Launch Date'
 	toColumn: 'Date Table'.Date

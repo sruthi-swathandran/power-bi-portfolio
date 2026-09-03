@@ -35,10 +35,6 @@ table 'Key Measures'
 		formatString: \$#,0;(\$#,0);\$#,0
 		lineageTag: a72eec37-0f5a-4740-a4dc-71322d0fa8f4
 
-	measure 'Avg Pledge per Backer' = DIVIDE([Total Pledged], [Total Backings])
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: d4f4fd70-5b54-4b98-910c-c8658fcf7bb8
-
 	measure 'Backings per Project' = DIVIDE([Total Backings], [Total Projects])
 		lineageTag: 4edba1ba-2e94-45cd-be94-3ef758dbdc20
 

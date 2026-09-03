@@ -1,6 +1,10 @@
 table Projects
 	lineageTag: 6627ab4b-70a4-4fbb-9ef7-955c98259e01
 
+	measure 'Avg Pledge per Backing' = DIVIDE([Total Pledged], [Total Backings])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: d4f4fd70-5b54-4b98-910c-c8658fcf7bb8
+
 	column ID
 		dataType: string
 		lineageTag: b22031e2-ca60-4026-89fa-c191a965a48e
@@ -48,11 +52,6 @@ table Projects
 		summarizeBy: none
 		sourceColumn: Launched
 
-		variation Variation
-			isDefault
-			relationship: c1d40abd-42c4-41a6-9e0a-336028022da9
-			defaultHierarchy: LocalDateTable_09ddbf5b-08f3-4682-967e-fff6a5f4bde6.'Date Hierarchy'
-
 		annotation SummarizationSetBy = Automatic
 
 	column Deadline
@@ -61,11 +60,6 @@ table Projects
 		lineageTag: 436816b5-080d-4481-ba75-452e95402616
 		summarizeBy: none
 		sourceColumn: Deadline
-
-		variation Variation
-			isDefault
-			relationship: a570dcdd-653a-44b5-adf1-1b63eb69df0f
-			defaultHierarchy: LocalDateTable_586c2d1a-a8d4-490c-a736-9dc39be73f0c.'Date Hierarchy'
 
 		annotation SummarizationSetBy = Automatic
 
