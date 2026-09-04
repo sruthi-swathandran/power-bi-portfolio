@@ -3,9 +3,9 @@
   "name": "ecb630a2dc028cfe9ec9",
   "position": {
     "x": 20.425531914893618,
-    "y": 368.63221884498483,
+    "y": 336.53495440729483,
     "z": 2000,
-    "height": 351.12462006079028,
+    "height": 383.22188449848028,
     "width": 1240.1215805471124,
     "tabOrder": 2000
   },
@@ -70,6 +70,21 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "categoryAxis": [
+        {
+          "properties": {
+            "innerPadding": {
+              "expr": {
+                "Literal": {
+                  "Value": "60L"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -78,6 +93,33 @@
               "expr": {
                 "Literal": {
                   "Value": "'United States and United Kingdom lead; Italy and Spain trail'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

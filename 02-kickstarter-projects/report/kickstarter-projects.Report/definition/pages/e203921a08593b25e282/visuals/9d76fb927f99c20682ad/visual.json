@@ -3,9 +3,9 @@
   "name": "9d76fb927f99c20682ad",
   "position": {
     "x": 20.425531914893618,
-    "y": 44.741641337386021,
+    "y": 30.15197568389058,
     "z": 0,
-    "height": 390.03039513677811,
+    "height": 430.88145896656539,
     "width": 600.12158054711244,
     "tabOrder": 0
   },
@@ -106,7 +106,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -132,8 +132,53 @@
             }
           }
         }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "1e5b13a2fff72f7e2b63",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "d642d8ac4b9bef2caf3b",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Success Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

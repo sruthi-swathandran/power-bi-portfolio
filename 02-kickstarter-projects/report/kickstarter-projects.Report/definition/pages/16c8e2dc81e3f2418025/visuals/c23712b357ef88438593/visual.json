@@ -6,7 +6,7 @@
     "y": 79.756838905775084,
     "z": 0,
     "height": 320,
-    "width": 610,
+    "width": 619.57446808510645,
     "tabOrder": 0
   },
   "visual": {
@@ -62,11 +62,70 @@
                   "Value": "'Success falls from 55% to 10% as goals rise'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "0ccf02c4a3ffef903961",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Goal Band"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4551abdba68411bebdf2",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Success Rate"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

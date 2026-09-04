@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "70d10519d59ae0dcb414",
   "position": {
-    "x": 640,
+    "x": 640.97264437689978,
     "y": 58.358662613981764,
     "z": 1000,
-    "height": 310,
-    "width": 610,
+    "height": 278.17629179331306,
+    "width": 609.84802431610944,
     "tabOrder": 1000
   },
   "visual": {
@@ -60,6 +60,33 @@
               "expr": {
                 "Literal": {
                   "Value": "'Launch month barely matters: 6 points between best and worst'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

@@ -5,8 +5,8 @@
     "x": 30.15197568389058,
     "y": 58.358662613981764,
     "z": 0,
-    "height": 310,
-    "width": 610,
+    "height": 278.17629179331306,
+    "width": 609.84802431610944,
     "tabOrder": 0
   },
   "visual": {
@@ -106,6 +106,33 @@
               "expr": {
                 "Literal": {
                   "Value": "'Campaigns that accept a preset duration succeed far less than ones with a custom length'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
                 }
               }
             }

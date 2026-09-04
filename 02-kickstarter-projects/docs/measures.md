@@ -109,10 +109,10 @@ Support per campaign. This is the measure that turns the correlation on the
 Overview page into a mechanism: in 2014 project count rose 49% while total
 backings fell, so support per project dropped by a third.
 
-### Avg Pledge per Backer
+### Avg Pledge per Backing
 
 ```dax
-Avg Pledge per Backer = DIVIDE([Total Pledged], [Total Backings])
+Avg Pledge per Backing = DIVIDE([Total Pledged], [Total Backings])
 ```
 
 Sum over sum, not the average of each project's ratio. Dividing totals weights

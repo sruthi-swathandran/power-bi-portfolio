@@ -3,9 +3,9 @@
   "name": "33460f51fe4c85791414",
   "position": {
     "x": 19.45288753799392,
-    "y": 434.77203647416417,
+    "y": 461.03343465045594,
     "z": 2000,
-    "height": 284.98480243161094,
+    "height": 258.72340425531917,
     "width": 1240.1215805471124,
     "tabOrder": 2000
   },
@@ -129,7 +129,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -144,6 +144,19 @@
               "expr": {
                 "Literal": {
                   "Value": "'Subcategories asking for more succeed less, though the relationship is loose'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
                 }
               }
             }
@@ -202,6 +215,62 @@
             }
           ]
         }
+      },
+      {
+        "name": "e51cbdef3dccec9e27fb",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Median Goal"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "37c6f2428e0a22b6e703",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Success Rate"
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "612e44da16a8541d9bb4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Subcategory"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "2e08f7134d01ab2d90c4",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
       }
     ]
   }

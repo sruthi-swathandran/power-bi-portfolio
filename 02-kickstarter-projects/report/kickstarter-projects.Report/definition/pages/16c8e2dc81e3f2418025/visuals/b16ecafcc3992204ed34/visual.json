@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "b16ecafcc3992204ed34",
   "position": {
-    "x": 649.726443768997,
+    "x": 640,
     "y": 79.756838905775084,
     "z": 1000,
     "height": 320,
-    "width": 610,
+    "width": 619.57446808510645,
     "tabOrder": 1000
   },
   "visual": {
@@ -62,11 +62,70 @@
                   "Value": "'Most creators ask for $1K to $5K, the second-best band'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "bold": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "2f8445d96abeb9c54247",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Goal Band"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "3c6ec5c5181340b65572",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Total Projects"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

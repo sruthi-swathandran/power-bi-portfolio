@@ -80,6 +80,26 @@
                   "Value": "'Support per project fell a third in 2014 and has not fully recovered'"
                 }
               }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "13D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -136,6 +156,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "b4a81af54e6d9ae15979",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Backings per Project"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

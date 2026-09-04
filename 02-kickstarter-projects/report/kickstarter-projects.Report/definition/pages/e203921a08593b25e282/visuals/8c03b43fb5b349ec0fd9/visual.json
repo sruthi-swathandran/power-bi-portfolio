@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
   "name": "8c03b43fb5b349ec0fd9",
   "position": {
-    "x": 640,
-    "y": 44.741641337386021,
+    "x": 629.30091185410333,
+    "y": 30.15197568389058,
     "z": 1000,
-    "height": 390.03039513677811,
-    "width": 619.57446808510645,
+    "height": 430.88145896656539,
+    "width": 630.27355623100311,
     "tabOrder": 1000
   },
   "visual": {
@@ -106,7 +106,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "11D"
+                  "Value": "10D"
                 }
               }
             },
@@ -119,8 +119,53 @@
             }
           }
         }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "''"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "3c1f035dc93000adae94",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "f2a2fa975f857fb0c79e",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Key Measures"
+              }
+            },
+            "Property": "Total Pledged"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

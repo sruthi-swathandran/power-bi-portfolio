@@ -1,0 +1,21 @@
+# Normalise line endings so Power BI rewriting project files on every save does
+# not produce diffs that are purely CRLF versus LF noise. Git stores LF in the
+# repository and checks out CRLF on Windows.
+* text=auto
+
+# Power BI project files are text and should be diffable
+*.pbip      text
+*.pbir      text
+*.pbism     text
+*.tmdl      text
+*.json      text
+*.md        text
+*.csv       text
+
+# Images are binary and must never be line-ending converted
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.pbix      binary
+*.pbit      binary
