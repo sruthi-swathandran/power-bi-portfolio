@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "8c03b43fb5b349ec0fd9",
+  "name": "a168400ff96c9dc9a5d1",
   "position": {
-    "x": 629.30091185410333,
-    "y": 30.15197568389058,
+    "x": 835.98784194528878,
+    "y": 74.40729483282675,
     "z": 1000,
-    "height": 430.88145896656539,
-    "width": 630.27355623100311,
+    "height": 405.59270516717322,
+    "width": 1051.9148936170213,
     "tabOrder": 1000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "scatterChart",
     "query": {
       "queryState": {
         "Category": {
@@ -32,7 +32,7 @@
             }
           ]
         },
-        "Y": {
+        "Size": {
           "projections": [
             {
               "field": {
@@ -42,71 +42,81 @@
                       "Entity": "Key Measures"
                     }
                   },
-                  "Property": "Total Pledged"
+                  "Property": "Total Projects"
                 }
               },
-              "queryRef": "Key Measures.Total Pledged",
-              "nativeQueryRef": "Total Pledged"
+              "queryRef": "Key Measures.Total Projects",
+              "nativeQueryRef": "Total Projects"
+            }
+          ]
+        },
+        "X": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Key Measures"
+                    }
+                  },
+                  "Property": "Backings per Project"
+                }
+              },
+              "queryRef": "Key Measures.Backings per Project",
+              "nativeQueryRef": "Backings per Project",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Avg Pledge per Backing"
+                }
+              },
+              "queryRef": "Projects.Avg Pledge per Backing",
+              "nativeQueryRef": "Avg Pledge per Backing"
             }
           ]
         }
-      },
-      "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Measure": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Key Measures"
-                  }
-                },
-                "Property": "Total Pledged"
-              }
-            },
-            "direction": "Descending"
-          }
-        ],
-        "isDefaultSort": true
       }
     },
-    "objects": {
-      "categoryAxis": [
+    "visualContainerObjects": {
+      "subTitle": [
         {
           "properties": {
-            "fontSize": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "21L"
+                  "Value": "false"
                 }
               }
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
+      ],
       "title": [
         {
           "properties": {
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'The categories raising the most money succeed least often'"
+                  "Value": "'Games attracts the largest crowds; Technology the largest pledges'"
                 }
               }
             },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "13D"
                 }
               }
             },
@@ -114,19 +124,6 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "''"
                 }
               }
             }

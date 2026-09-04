@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "9d76fb927f99c20682ad",
+  "name": "6599663adea709981dd7",
   "position": {
-    "x": 20.425531914893618,
-    "y": 30.15197568389058,
-    "z": 0,
-    "height": 430.88145896656539,
-    "width": 600.12158054711244,
-    "tabOrder": 0
+    "x": 835.98784194528878,
+    "y": 480,
+    "z": 2000,
+    "height": 570.45592705167178,
+    "width": 1051.9148936170213,
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "barChart",
@@ -27,7 +27,7 @@
                 }
               },
               "queryRef": "Projects.Category",
-              "nativeQueryRef": "Category",
+              "nativeQueryRef": "Count of Category",
               "active": true
             }
           ]
@@ -39,14 +39,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Key Measures"
+                      "Entity": "Projects"
                     }
                   },
-                  "Property": "Success Rate"
+                  "Property": "Avg Pledge per Backing"
                 }
               },
-              "queryRef": "Key Measures.Success Rate",
-              "nativeQueryRef": "Success Rate"
+              "queryRef": "Projects.Avg Pledge per Backing",
+              "nativeQueryRef": "Avg Pledge per Backing"
             }
           ]
         }
@@ -58,10 +58,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "Key Measures"
+                    "Entity": "Projects"
                   }
                 },
-                "Property": "Success Rate"
+                "Property": "Avg Pledge per Backing"
               }
             },
             "direction": "Descending"
@@ -70,43 +70,27 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "categoryAxis": [
+    "visualContainerObjects": {
+      "subTitle": [
         {
           "properties": {
-            "fontSize": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
-                }
-              }
-            },
-            "maxMarginFactor": {
-              "expr": {
-                "Literal": {
-                  "Value": "17L"
+                  "Value": "false"
                 }
               }
             }
           }
         }
-      ]
-    },
-    "visualContainerObjects": {
+      ],
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Dance and Theater succeed nearly three times as often as Technology'"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "13D"
                 }
               }
             },
@@ -116,30 +100,11 @@
                   "Value": "true"
                 }
               }
-            }
-          }
-        }
-      ],
-      "spacing": [
-        {
-          "properties": {
-            "verticalSpacing": {
-              "expr": {
-                "Literal": {
-                  "Value": "3D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "subTitle": [
-        {
-          "properties": {
+            },
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "''"
+                  "Value": "'Technology projects receive $128 per backing, Comics $49'"
                 }
               }
             }
@@ -148,5 +113,37 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "8e4cba46aa4ec8aee6b1",
+        "field": {
+          "Column": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Category"
+          }
+        },
+        "type": "Categorical"
+      },
+      {
+        "name": "4964582f1dd9d74c7226",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "Projects"
+              }
+            },
+            "Property": "Avg Pledge per Backing"
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }

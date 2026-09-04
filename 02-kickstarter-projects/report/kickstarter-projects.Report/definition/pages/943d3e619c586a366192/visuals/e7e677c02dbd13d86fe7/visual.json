@@ -203,34 +203,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "d5baecea924989713f2b",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Total Projects"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "53b77d38edefcc48d4bd",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Success Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -95,37 +95,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "0ccf02c4a3ffef903961",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Projects"
-              }
-            },
-            "Property": "Goal Band"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "4551abdba68411bebdf2",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Success Rate"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

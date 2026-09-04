@@ -175,20 +175,6 @@
             }
           ]
         }
-      },
-      {
-        "name": "51a8a7a1bac212b9db0d",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Median Pct of Goal"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

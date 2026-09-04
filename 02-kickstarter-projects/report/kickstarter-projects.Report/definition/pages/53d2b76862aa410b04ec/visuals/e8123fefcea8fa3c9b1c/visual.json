@@ -192,34 +192,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "22318797de03d582e222",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Projects"
-              }
-            },
-            "Property": "Duration Days"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "e381e1ca640bc605706c",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Success Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

@@ -1,6 +1,6 @@
 # Kickstarter projects: crowdfunding success analysis
 
-A four-page Power BI report covering 374,853 Kickstarter campaigns launched
+A five-page Power BI report covering 374,853 Kickstarter campaigns launched
 between April 2009 and January 2018.
 
 The questions are the ones a creator or a platform analyst would actually ask:
@@ -11,6 +11,7 @@ which of the obvious explanations survive contact with the data.
 
 - Success rate falls from 55% to 10% as goals rise, monotonically across seven bands. [Goal setting](#3-goal-setting)
 - Failure is rarely a near miss. Successful campaigns finish at a median 117% of goal, failed ones at 2%. [Goal setting](#3-goal-setting)
+- Success is about crowd size, not cheque size. Successful campaigns attract 264 backings against 16 for failures, at almost identical pledge values. [Backer behaviour](#5-backer-behaviour)
 - Campaigns that accept a preset duration succeed far less than campaigns one day either side of it. The 30-day default succeeds 35.7% of the time; a custom 31-day campaign succeeds 55.1%. [Timing and geography](#4-timing-and-geography)
 - The categories raising the most money succeed least often. Technology is third by revenue and last by success rate. [Category performance](#2-category-performance)
 - Success collapsed from 47% to 32% between 2013 and 2015 while volume rose 67%, and support per project fell by a third in a single year. [Platform growth](#1-platform-growth-and-success-rates)
@@ -247,6 +248,50 @@ Kingdom close behind at 41.0%, then a drop through Canada at 33.4% and Germany a
 27.3% to Italy at 18.5%. Only countries with 1,000 or more projects are shown,
 since a rate built on 200 campaigns cannot be set beside one built on 261,000.
 
+### 5. Backer behaviour
+
+![Backers page](./images/backers.png)
+
+**Success is a question of how many people back a campaign, not how much each one
+gives.**
+
+| State | Backings per project | Avg pledge per backing |
+|---|---:|---:|
+| Successful | 264 | $86 |
+| Failed | 16 | $80 |
+
+Sixteen times the crowd at a near-identical cheque size. Whatever separates a
+funded campaign from an unfunded one operates on reach, not on persuading
+individual backers to give more.
+
+**Goal size compounds the same problem.** Moving from the smallest goal band to
+the largest, the crowd required rises eighteenfold while the typical pledge rises
+about four times.
+
+| Goal band | Backings per project | Avg pledge per backing |
+|---|---:|---:|
+| Under $1K | 22 | $33 |
+| $10K to $25K | 147 | $74 |
+| $100K+ | 394 | $120 |
+
+Bigger projects do attract somewhat larger individual pledges, but nowhere near
+enough to cover the gap. A $100K goal needs an audience, not a wealthier one.
+
+**Categories differ on both axes.** Games averages 322 backings per project at $65
+per backing and Comics 135 at $49. Technology averages 165 backings at $128 and
+Design 241 at $101.
+
+Two things this does not establish. Pledge per backing is total pledged divided by
+total backings, so it cannot distinguish a category where most backers pledge $128
+from one where most pledge $30 and a few pledge thousands. The dataset holds
+project totals only, with no per-backer rows. And 165 backings is still a crowd,
+so a higher figure does not imply a small group of large patrons.
+
+What it does reframe is Technology's poor success rate. Technology attracts more
+money per backing than any other category, so the problem is not backers unwilling
+to spend. Technology projects also carry the highest median goal at $18,000, which
+needs a crowd they rarely assemble.
+
 ---
 
 ## Assumptions and limitations
@@ -258,6 +303,12 @@ Suspended campaigns are excluded throughout as having no outcome.
 summing it counts one person once per project they supported. The measure is named
 `Total Backings` for that reason. The dataset offers no way to count distinct
 people.
+
+**No per-backer detail.** Pledge per backing is a ratio of two totals. Nothing in
+this data shows what any individual pledged, so a category averaging $128 could be
+one where most backers pledge around that figure or one where a minority pledge
+far more. Statements about pledge size are about the average, never about the
+distribution.
 
 **Duration** is deadline minus launch date. Since `Deadline` has no time component
 and `Launched` does, every campaign records one day shorter than its nominal

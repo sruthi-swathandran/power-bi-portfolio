@@ -179,34 +179,6 @@
           ]
         },
         "howCreated": "User"
-      },
-      {
-        "name": "6bfba80b68ba28c80c72",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Projects"
-              }
-            },
-            "Property": "Country"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "3465be8ae2449c0eb1ab",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Key Measures"
-              }
-            },
-            "Property": "Success Rate"
-          }
-        },
-        "type": "Advanced"
       }
     ]
   }

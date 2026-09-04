@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.12.0/schema.json",
-  "name": "70d10519d59ae0dcb414",
+  "name": "83b8e9d98e9a2c2171df",
   "position": {
-    "x": 640.97264437689978,
-    "y": 58.358662613981764,
-    "z": 1000,
-    "height": 278.17629179331306,
-    "width": 609.84802431610944,
-    "tabOrder": 1000
+    "x": 20.425531914893618,
+    "y": 480,
+    "z": 3000,
+    "height": 570.45592705167178,
+    "width": 805.34954407294833,
+    "tabOrder": 3000
   },
   "visual": {
-    "visualType": "columnChart",
+    "visualType": "lineStackedColumnComboChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Date Table"
+                      "Entity": "Projects"
                     }
                   },
-                  "Property": "Month"
+                  "Property": "Goal Band"
                 }
               },
-              "queryRef": "Date Table.Month",
-              "nativeQueryRef": "Month",
+              "queryRef": "Projects.Goal Band",
+              "nativeQueryRef": "Goal Band",
               "active": true
             }
           ]
@@ -42,11 +42,29 @@
                       "Entity": "Key Measures"
                     }
                   },
-                  "Property": "Success Rate"
+                  "Property": "Backings per Project"
                 }
               },
-              "queryRef": "Key Measures.Success Rate",
-              "nativeQueryRef": "Success Rate"
+              "queryRef": "Key Measures.Backings per Project",
+              "nativeQueryRef": "Backings per Project"
+            }
+          ]
+        },
+        "Y2": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Projects"
+                    }
+                  },
+                  "Property": "Avg Pledge per Backing"
+                }
+              },
+              "queryRef": "Projects.Avg Pledge per Backing",
+              "nativeQueryRef": "Avg Pledge per Backing"
             }
           ]
         }
@@ -56,17 +74,10 @@
       "title": [
         {
           "properties": {
-            "text": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Launch month barely matters: 6 points between best and worst'"
-                }
-              }
-            },
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "13D"
                 }
               }
             },
@@ -74,6 +85,13 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bigger goals need far more backers, not richer ones'"
                 }
               }
             }
