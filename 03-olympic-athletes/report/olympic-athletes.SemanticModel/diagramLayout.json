@@ -1,0 +1,99 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 234,
+            "y": 19
+          },
+          "nodeIndex": "Athlete",
+          "nodeLineageTag": "fc07f859-79c3-4cb4-8804-829f1ba7297f",
+          "size": {
+            "height": 152,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 228,
+            "y": 313
+          },
+          "nodeIndex": "Event",
+          "nodeLineageTag": "b98e5e54-49bb-4929-9a4f-d52e6198c0bb",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 564,
+            "y": 0
+          },
+          "nodeIndex": "Games",
+          "nodeLineageTag": "047ff9f1-a4fc-421e-96ee-00adb5017494",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 919,
+            "y": 0
+          },
+          "nodeIndex": "Entries",
+          "nodeLineageTag": "182f7225-cd4c-4c3e-a0a2-193ad2ac9782",
+          "size": {
+            "height": 272,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 729,
+            "y": 441
+          },
+          "nodeIndex": "Country",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 975,
+            "y": 256.5
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "b33c32be-b890-4ac6-ad11-3dd360473c67",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

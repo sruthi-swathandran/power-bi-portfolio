@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "olympic-athletes"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "c2c65320-d938-4826-9fb9-a79909586c08"
+  }
+}
