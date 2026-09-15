@@ -1,0 +1,15 @@
+expression athlete_events =
+		let
+		    Source = Csv.Document(File.Contents("D:\Projects\power-bi-portfolio\03-olympic-athletes\data\athlete_events.csv"),[Delimiter=",", Columns=15, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+		    #"Replaced Value" = Table.ReplaceValue(#"Promoted Headers","NA",null,Replacer.ReplaceValue,{"Age", "Height", "Weight"}),
+		    #"Changed Type" = Table.TransformColumnTypes(#"Replaced Value",{{"ID", Int64.Type}, {"Name", type text}, {"Sex", type text}, {"Age", Int64.Type}, {"Height", type number}, {"Weight", type number}, {"Team", type text}, {"NOC", type text}, {"Games", type text}, {"Year", Int64.Type}, {"Season", type text}, {"City", type text}, {"Sport", type text}, {"Event", type text}, {"Medal", type text}}),
+		    #"Replaced Value1" = Table.ReplaceValue(#"Changed Type","NA",null,Replacer.ReplaceValue,{"Medal"})
+		in
+		    #"Replaced Value1"
+	lineageTag: fed7134c-fb1f-4856-ab15-2a649f20d05f
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

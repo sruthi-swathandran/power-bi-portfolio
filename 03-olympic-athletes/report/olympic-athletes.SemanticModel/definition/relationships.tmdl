@@ -1,0 +1,16 @@
+relationship AutoDetected_b6d0a4a7-4812-4ca9-b4ea-a991b77e3204
+	fromColumn: Entries.NOC
+	toColumn: Country.NOC
+
+relationship AutoDetected_60435a3e-df6b-468f-8990-d3fb91120026
+	fromColumn: Entries.Games
+	toColumn: Games.Games
+
+relationship AutoDetected_000918f5-3bfb-4a2a-b4a7-9de19731f656
+	fromColumn: Entries.Event
+	toColumn: Event.Event
+
+relationship 779d62d7-1e95-0820-4b0b-c9c472e39a20
+	fromColumn: Entries.ID
+	toColumn: Athlete.ID
+

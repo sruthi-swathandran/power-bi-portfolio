@@ -1,0 +1,56 @@
+table Country
+	lineageTag: cc600d92-8e5f-4da1-b723-3ba2418e3946
+
+	column NOC
+		dataType: string
+		lineageTag: 65cc38e5-3626-4691-8a37-213117a9778c
+		summarizeBy: none
+		sourceColumn: NOC
+
+		annotation SummarizationSetBy = Automatic
+
+	column region
+		dataType: string
+		lineageTag: 8ff7ff3e-9957-4c49-a04d-d29c1039cd27
+		summarizeBy: none
+		sourceColumn: region
+
+		annotation SummarizationSetBy = Automatic
+
+	column notes
+		dataType: string
+		lineageTag: 8527c87b-fe63-4ed3-a4ff-9d70b27043b6
+		summarizeBy: none
+		sourceColumn: notes
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 170fcae1-ec24-4a93-b85a-8bc431e1f054
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("D:\Projects\power-bi-portfolio\03-olympic-athletes\data\country_definitions.csv"),[Delimiter=",", Columns=3, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"NOC", type text}, {"region", type text}, {"notes", type text}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type","NA",null,Replacer.ReplaceValue,{"region"}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Value","SIN","SGP",Replacer.ReplaceText,{"NOC"}),
+				    #"Added Custom" = Table.AddColumn(#"Replaced Value1", "country", each if [region] = null then [notes] else [region]),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Added Custom",{{"country", type text}}),
+				    #"Filtered Rows" = Table.SelectRows(#"Changed Type1", each true)
+				in
+				    #"Filtered Rows"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

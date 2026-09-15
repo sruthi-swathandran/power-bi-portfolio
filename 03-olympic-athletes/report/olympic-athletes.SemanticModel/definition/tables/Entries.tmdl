@@ -1,0 +1,110 @@
+table Entries
+	lineageTag: 182f7225-cd4c-4c3e-a0a2-193ad2ac9782
+
+	column ID
+		dataType: int64
+		isHidden
+		formatString: 0
+		lineageTag: e2c335c6-50a3-4bc9-b0c7-21332829d031
+		summarizeBy: none
+		sourceColumn: ID
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Age
+		dataType: int64
+		formatString: 0
+		lineageTag: ec260152-103f-46b9-8e43-683b84adc86f
+		summarizeBy: sum
+		sourceColumn: Age
+
+		annotation SummarizationSetBy = Automatic
+
+	column Height
+		dataType: double
+		lineageTag: d6503ecf-6abb-44d2-9612-22a4d3a1dd7e
+		summarizeBy: sum
+		sourceColumn: Height
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Weight
+		dataType: double
+		lineageTag: 8b40ea2e-bb99-4aa7-8980-27832dcf6ec7
+		summarizeBy: sum
+		sourceColumn: Weight
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NOC
+		dataType: string
+		isHidden
+		lineageTag: 910f41eb-4a5e-4351-bbca-4cc98dc03622
+		summarizeBy: none
+		sourceColumn: NOC
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Games
+		dataType: string
+		isHidden
+		lineageTag: c49c5890-6708-47dd-840a-65376304cab1
+		summarizeBy: none
+		sourceColumn: Games
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Event
+		dataType: string
+		isHidden
+		lineageTag: c90ed090-1a7c-418f-9896-7ca1b8aca1c5
+		summarizeBy: none
+		sourceColumn: Event
+
+		changedProperty = IsHidden
+
+		annotation SummarizationSetBy = Automatic
+
+	column Medal
+		dataType: string
+		lineageTag: 5401ced2-62f1-40f4-80bc-3ae33f503284
+		summarizeBy: none
+		sourceColumn: Medal
+
+		annotation SummarizationSetBy = Automatic
+
+	column MedalKey
+		dataType: string
+		lineageTag: abfdd540-1345-42dd-847f-8fd6cceeed6d
+		summarizeBy: none
+		sourceColumn: MedalKey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Entries = m
+		mode: import
+		source =
+				let
+				    Source = athlete_events,
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Name", "Sex", "Team", "Year", "Season", "City", "Sport"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "MedalKey", each if [Medal] = null then null
+				else [Games] & "|" & [Event] & "|" & [Medal] & "|" & [NOC]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom",{{"MedalKey", type text}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

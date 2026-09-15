@@ -1,0 +1,50 @@
+table Games
+	lineageTag: 047ff9f1-a4fc-421e-96ee-00adb5017494
+
+	column Games
+		dataType: string
+		lineageTag: 2098dbc2-b0d4-45ae-b005-968818717aa0
+		summarizeBy: none
+		sourceColumn: Games
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		lineageTag: 8182152b-cfc6-4459-896c-b68b14910e54
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Season
+		dataType: string
+		lineageTag: f60b6c4b-c021-4e57-b394-ac628c3f1a7b
+		summarizeBy: none
+		sourceColumn: Season
+
+		annotation SummarizationSetBy = Automatic
+
+	column City
+		dataType: string
+		lineageTag: 1cbfd07f-7bd6-424d-b694-04a0d1e5224f
+		summarizeBy: none
+		sourceColumn: City
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Games = m
+		mode: import
+		source =
+				let
+				    Source = athlete_events,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Games", "Year", "Season", "City"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Games"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

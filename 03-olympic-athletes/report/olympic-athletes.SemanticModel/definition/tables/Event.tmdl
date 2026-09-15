@@ -1,0 +1,33 @@
+table Event
+	lineageTag: b98e5e54-49bb-4929-9a4f-d52e6198c0bb
+
+	column Sport
+		dataType: string
+		lineageTag: c37851de-1954-4097-8dd3-17474fb27a92
+		summarizeBy: none
+		sourceColumn: Sport
+
+		annotation SummarizationSetBy = Automatic
+
+	column Event
+		dataType: string
+		lineageTag: 1ac8048f-c00c-49f1-9c05-7a87ee9ff0b6
+		summarizeBy: none
+		sourceColumn: Event
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Event = m
+		mode: import
+		source =
+				let
+				    Source = athlete_events,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Sport", "Event"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,42 @@
+table Athlete
+	lineageTag: fc07f859-79c3-4cb4-8804-829f1ba7297f
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 092d42d3-ec6e-40f6-a733-a88c4c41dcc5
+		summarizeBy: none
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Name
+		dataType: string
+		lineageTag: 782d20d6-dd65-402a-9bb7-8ad0f7243afe
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sex
+		dataType: string
+		lineageTag: a43ecfa5-5da2-43f2-b57a-b993eaa4fde9
+		summarizeBy: none
+		sourceColumn: Sex
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Athlete = m
+		mode: import
+		source =
+				let
+				    Source = athlete_events,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"ID", "Name", "Sex"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns")
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

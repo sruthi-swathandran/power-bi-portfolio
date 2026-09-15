@@ -1,0 +1,85 @@
+table _Measures
+	lineageTag: b33c32be-b890-4ac6-ad11-3dd360473c67
+
+	measure Entries = COUNTROWS(Entries)
+		formatString: #,0
+		lineageTag: 1981c30c-ba76-48a8-9121-21ba0a721386
+
+	measure Athletes = DISTINCTCOUNT(Entries[ID])
+		formatString: #,0
+		lineageTag: 814e453b-daea-4843-a533-67d24cde4de7
+
+	measure 'Medal Rows' = CALCULATE(COUNTROWS(Entries), NOT ISBLANK(Entries[Medal]))
+		formatString: #,0
+		lineageTag: b0f34594-4a29-4f93-b134-a99e4391e4f8
+
+	measure Medals = DISTINCTCOUNTNOBLANK(Entries[MedalKey])
+		formatString: #,0
+		lineageTag: 522f179a-d633-4a3e-b8b2-d366b0c8bc60
+
+	measure Countries = DISTINCTCOUNT(Entries[NOC])
+		formatString: #,0
+		lineageTag: 28124027-1831-4dee-b8fd-a065f6a7059e
+
+	measure Sports = COUNTROWS(SUMMARIZE(Entries, Event[Sport]))
+		formatString: #,0
+		lineageTag: 3f700ee9-ca6b-4272-a5d5-ab8292a20abe
+
+	measure 'Events Contested' = DISTINCTCOUNT(Entries[Event])
+		formatString: #,0
+		lineageTag: cc7d7f9e-8b5d-4abc-a388-dcd0b98a2c08
+
+	measure Gold = CALCULATE([Medals], Entries[Medal] = "Gold")
+		formatString: #,0
+		lineageTag: 9a746385-a101-4308-b76f-17444c717b7b
+
+	measure Silver = CALCULATE([Medals], Entries[Medal] = "Silver")
+		formatString: #,0
+		lineageTag: 377bba57-4f36-4be3-a237-95a633ef84b9
+
+	measure Bronze = CALCULATE([Medals], Entries[Medal] = "Bronze")
+		formatString: #,0
+		lineageTag: 70cf660a-02f4-43b8-8477-40740fc9ebc8
+
+	measure 'Medals per 100 Athletes' = DIVIDE([Medals], [Athletes]) * 100
+		formatString: 0.0
+		lineageTag: 3eabf551-66bc-48da-a7ce-926d3c79549d
+
+	measure 'Female Athletes' = CALCULATE([Athletes], Athlete[Sex] = "F")
+		formatString: #,0
+		lineageTag: f1cc2112-97be-4293-adfa-64b6b4005254
+
+	measure 'Female Share' = DIVIDE([Female Athletes], [Athletes])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5477c936-2ba4-4c02-bacf-22ca122c4cea
+
+	measure 'Median Age' = MEDIAN(Entries[Age])
+		lineageTag: 4612bbd8-3652-4be9-a893-70f2fd2e4997
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Height cm' = AVERAGE(Entries[Height])
+		formatString: 0.0
+		lineageTag: 3a0bfa03-2b15-4b65-a74e-b9f799f36841
+
+	measure 'Avg Weight kg' = AVERAGE(Entries[Weight])
+		formatString: 0.0
+		lineageTag: 22b8f203-9a63-49e4-a953-59ec6e5e5ab0
+
+	measure 'Rows per Medal' = DIVIDE([Medal Rows], [Medals])
+		lineageTag: 8dce7304-8607-4635-9b75-25988bd9fd35
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+
