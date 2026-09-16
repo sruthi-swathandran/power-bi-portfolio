@@ -91,6 +91,14 @@ table Entries
 
 		annotation SummarizationSetBy = Automatic
 
+	column 'Is Host' = IF(Entries[NOC] = RELATED(Games[host_noc]), "Host", "Visitor")
+		dataType: string
+		lineageTag: 89050897-d323-4650-ac3c-ef40ea6c9a54
+		summarizeBy: none
+		isDataTypeInferred
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Entries = m
 		mode: import
 		source =

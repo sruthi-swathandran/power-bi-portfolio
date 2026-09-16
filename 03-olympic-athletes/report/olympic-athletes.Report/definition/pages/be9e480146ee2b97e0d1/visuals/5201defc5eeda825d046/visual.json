@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
-  "name": "58dbbb6814234cd993a4",
+  "name": "5201defc5eeda825d046",
   "position": {
-    "x": 20.055299539170505,
-    "y": 441.21658986175117,
-    "z": 8000,
-    "height": 278.41474654377879,
-    "width": 1209.2165898617511,
-    "tabOrder": 8000
+    "x": 8.84113584036838,
+    "y": 0,
+    "z": 0,
+    "height": 282.91634689178818,
+    "width": 1257.4059861857252,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "lineChart",
@@ -60,11 +60,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Female Share"
+                  "Property": "Events Contested"
                 }
               },
-              "queryRef": "_Measures.Female Share",
-              "nativeQueryRef": "Female Share"
+              "queryRef": "_Measures.Events Contested",
+              "nativeQueryRef": "Events Contested"
             }
           ]
         }
@@ -79,7 +79,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Female Share"
+                "Property": "Events Contested"
               }
             },
             "direction": "Descending"
@@ -95,7 +95,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Winter ran a higher share of women than Summer at nine of the ten Games from 1936 to 1980'"
+                  "Value": "'The Summer programme doubled from 150 events in 1960 to 300 in 2000, and has barely moved since'"
                 }
               }
             }

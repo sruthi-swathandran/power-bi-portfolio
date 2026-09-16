@@ -1,4 +1,4 @@
-# Global CO2 Emissions — 270 Years of Fossil Fuel Data
+# Global CO2 emissions: 270 years of fossil fuel data
 
 An interactive report covering global carbon dioxide emissions from 1750 to 2021,
 by country, alongside population data for the same year and country.
@@ -9,7 +9,7 @@ by country, alongside population data for the same year and country.
 
 1. How have global CO2 emissions changed over time?
 2. Which countries emit the most each year, and how has that ranking shifted?
-3. Where does the *average person* emit the most CO2 — that is, who leads on a
+3. Where does the *average person* emit the most CO2, meaning who leads on a
    per-capita basis rather than in absolute terms?
 4. How do emissions from fossil fuels compare with those from land use change?
 
@@ -17,9 +17,9 @@ by country, alongside population data for the same year and country.
 
 ## Data
 
-**Source:** [Our World in Data — CO2 and Greenhouse Gas Emissions](https://ourworldindata.org/co2-emissions)
+**Source:** [Our World in Data, CO2 and Greenhouse Gas Emissions](https://ourworldindata.org/co2-emissions)
 **Licence:** CC BY 4.0
-**Period:** 1750–2021
+**Period:** 1750 to 2021
 **Rows:** 50,598 · **Columns:** 79
 
 Download and place `visualizing_global_co2_data.csv` in `data/`. It is not

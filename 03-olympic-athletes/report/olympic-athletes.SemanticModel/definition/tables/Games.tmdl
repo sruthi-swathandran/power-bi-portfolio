@@ -34,15 +34,41 @@ table Games
 
 		annotation SummarizationSetBy = Automatic
 
+	column host_city_en
+		dataType: string
+		lineageTag: 6523fbd2-ef56-4f85-b16c-7e50cebcd1bd
+		summarizeBy: none
+		sourceColumn: host_city_en
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_country_modern
+		dataType: string
+		lineageTag: 87e76f84-94ac-4013-bd5f-ea3476b40828
+		summarizeBy: none
+		sourceColumn: host_country_modern
+
+		annotation SummarizationSetBy = Automatic
+
+	column host_noc
+		dataType: string
+		lineageTag: cc80657c-9b4f-4f5e-8944-a3eb023fb8bb
+		summarizeBy: none
+		sourceColumn: host_noc
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Games = m
 		mode: import
 		source =
 				let
 				    Source = athlete_events,
 				    #"Removed Other Columns" = Table.SelectColumns(Source,{"Games", "Year", "Season", "City"}),
-				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Games"})
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns", {"Games"}),
+				    #"Merged Queries" = Table.NestedJoin(#"Removed Duplicates", {"Games"}, host_countries, {"Games"}, "host_countries", JoinKind.LeftOuter),
+				    #"Expanded host_countries" = Table.ExpandTableColumn(#"Merged Queries", "host_countries", {"host_city_en", "host_country_modern", "host_noc"}, {"host_city_en", "host_country_modern", "host_noc"})
 				in
-				    #"Removed Duplicates"
+				    #"Expanded host_countries"
 
 	annotation PBI_NavigationStepName = Navigation
 

@@ -13,3 +13,17 @@ expression athlete_events =
 
 	annotation PBI_ResultType = Table
 
+expression host_countries =
+		let
+		    Source = Csv.Document(File.Contents("D:\Projects\power-bi-portfolio\03-olympic-athletes\reference\host_countries.csv"),[Delimiter=",", Columns=5, Encoding=1252, QuoteStyle=QuoteStyle.None]),
+		    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}, {"Column2", type text}, {"Column3", type text}, {"Column4", type text}, {"Column5", type text}}),
+		    #"Promoted Headers" = Table.PromoteHeaders(#"Changed Type", [PromoteAllScalars=true]),
+		    #"Changed Type1" = Table.TransformColumnTypes(#"Promoted Headers",{{"Games", type text}, {"host_city", type text}, {"host_city_en", type text}, {"host_country_modern", type text}, {"host_noc", type text}})
+		in
+		    #"Changed Type1"
+	lineageTag: 9a3f629f-37ba-4a00-9232-a52bbfb8afff
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

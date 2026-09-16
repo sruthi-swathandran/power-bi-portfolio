@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
-  "name": "cd5728c340c3815117ad",
+  "name": "b576847801c3c5bab496",
   "position": {
-    "x": 976.53495440729489,
-    "y": 74.8936170212766,
-    "z": 0,
-    "height": 644.86322188449856,
-    "width": 303.46504559270517,
-    "tabOrder": 0
+    "x": 0,
+    "y": 419.209726443769,
+    "z": 1000,
+    "height": 300.54711246200611,
+    "width": 1268.3282674772038,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "barChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,15 +20,33 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Country"
+                      "Entity": "Games"
                     }
                   },
-                  "Property": "country"
+                  "Property": "Year"
                 }
               },
-              "queryRef": "Country.country",
-              "nativeQueryRef": "country",
+              "queryRef": "Games.Year",
+              "nativeQueryRef": "Year",
               "active": true
+            }
+          ]
+        },
+        "Series": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "Games"
+                    }
+                  },
+                  "Property": "Season"
+                }
+              },
+              "queryRef": "Games.Season",
+              "nativeQueryRef": "Season"
             }
           ]
         },
@@ -42,11 +60,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Medals per 100 Athletes"
+                  "Property": "Host Medal Share"
                 }
               },
-              "queryRef": "_Measures.Medals per 100 Athletes",
-              "nativeQueryRef": "Medals per 100 Athletes"
+              "queryRef": "_Measures.Host Medal Share",
+              "nativeQueryRef": "Host Medal Share"
             }
           ]
         }
@@ -61,7 +79,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Medals per 100 Athletes"
+                "Property": "Host Medal Share"
               }
             },
             "direction": "Descending"
@@ -70,6 +88,28 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "legend": [
+        {
+          "properties": {
+            "showGradientLegend": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -77,7 +117,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Thirteen countries exceed 15 medals per 100 athletes'"
+                  "Value": "'The two tallest bars since 1960 are the boycotted Games, Moscow 1980 and Los Angeles 1984'"
                 }
               }
             }
@@ -90,15 +130,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "00c98fcf5b4e0c65ea57",
+        "name": "eec56335b3cb7bd0b54d",
         "field": {
-          "Measure": {
+          "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "_Measures"
+                "Entity": "Games"
               }
             },
-            "Property": "Athletes"
+            "Property": "Year"
           }
         },
         "type": "Advanced",
@@ -106,57 +146,8 @@
           "Version": 2,
           "From": [
             {
-              "Name": "_",
-              "Entity": "_Measures",
-              "Type": 0
-            }
-          ],
-          "Where": [
-            {
-              "Condition": {
-                "Comparison": {
-                  "ComparisonKind": 1,
-                  "Left": {
-                    "Measure": {
-                      "Expression": {
-                        "SourceRef": {
-                          "Source": "_"
-                        }
-                      },
-                      "Property": "Athletes"
-                    }
-                  },
-                  "Right": {
-                    "Literal": {
-                      "Value": "200L"
-                    }
-                  }
-                }
-              }
-            }
-          ]
-        },
-        "howCreated": "User"
-      },
-      {
-        "name": "267df61f815152018730",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Medals per 100 Athletes"
-          }
-        },
-        "type": "Advanced",
-        "filter": {
-          "Version": 2,
-          "From": [
-            {
-              "Name": "_",
-              "Entity": "_Measures",
+              "Name": "g",
+              "Entity": "Games",
               "Type": 0
             }
           ],
@@ -166,18 +157,18 @@
                 "Comparison": {
                   "ComparisonKind": 2,
                   "Left": {
-                    "Measure": {
+                    "Column": {
                       "Expression": {
                         "SourceRef": {
-                          "Source": "_"
+                          "Source": "g"
                         }
                       },
-                      "Property": "Medals per 100 Athletes"
+                      "Property": "Year"
                     }
                   },
                   "Right": {
                     "Literal": {
-                      "Value": "15L"
+                      "Value": "1960L"
                     }
                   }
                 }

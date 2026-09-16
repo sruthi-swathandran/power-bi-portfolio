@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
-  "name": "58dbbb6814234cd993a4",
+  "name": "92a59614c30e390a40e0",
   "position": {
-    "x": 20.055299539170505,
-    "y": 441.21658986175117,
-    "z": 8000,
-    "height": 278.41474654377879,
-    "width": 1209.2165898617511,
-    "tabOrder": 8000
+    "x": 5.8940905602455862,
+    "y": 58.940905602455864,
+    "z": 0,
+    "height": 360.52187260168836,
+    "width": 1268.2118188795087,
+    "tabOrder": 0
   },
   "visual": {
-    "visualType": "lineChart",
+    "visualType": "clusteredColumnChart",
     "query": {
       "queryState": {
         "Category": {
@@ -60,11 +60,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Female Share"
+                  "Property": "Host Medal Share"
                 }
               },
-              "queryRef": "_Measures.Female Share",
-              "nativeQueryRef": "Female Share"
+              "queryRef": "_Measures.Host Medal Share",
+              "nativeQueryRef": "Host Medal Share"
             }
           ]
         }
@@ -79,7 +79,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Female Share"
+                "Property": "Host Medal Share"
               }
             },
             "direction": "Descending"
@@ -95,7 +95,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Winter ran a higher share of women than Summer at nine of the ten Games from 1936 to 1980'"
+                  "Value": "'Early hosts dominated: the United States won 82% of medals at St Louis in 1904'"
                 }
               }
             }

@@ -83,6 +83,26 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Host Medals' = CALCULATE([Medals], Entries[Is Host] = "Host")
+		formatString: 0
+		lineageTag: b2002626-0b1e-4082-a620-27b75424d996
+
+	measure 'Host Medal Share' = DIVIDE([Host Medals], [Medals])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c78be098-7255-4b24-9c99-ed4674abb250
+
+	measure 'Games Held' = DISTINCTCOUNT(Entries[Games])
+		formatString: 0
+		lineageTag: ed9ebf4d-d93a-4337-9078-8956bce05373
+
+	measure 'First Year' = MINX(Entries, RELATED(Games[Year]))
+		formatString: 0
+		lineageTag: 94571596-d205-45d1-a072-4bca71a0fbe7
+
+	measure 'Last Year' = MAXX(Entries, RELATED(Games[Year]))
+		formatString: 0
+		lineageTag: 9400a467-1d67-4395-9622-6301e10b5c2c
+
 	partition _Measures = m
 		mode: import
 		source =

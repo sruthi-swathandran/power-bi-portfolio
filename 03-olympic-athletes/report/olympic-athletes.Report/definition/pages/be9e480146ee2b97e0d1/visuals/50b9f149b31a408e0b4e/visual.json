@@ -1,0 +1,87 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "name": "50b9f149b31a408e0b4e",
+  "position": {
+    "x": 491.1742133537989,
+    "y": 282.91634689178818,
+    "z": 2000,
+    "height": 437.145049884881,
+    "width": 775.0729086722946,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Events counts the distinct events contested at each Games. The Summer programme doubled between 1960 and 2000 and has been flat since, at around 300 events. The Winter programme grew later and from a much smaller base, from 17 events in 1924 to 98 in 2014.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The table lists sports absent from the programme as of 2016, which is not the same as gone for good. Rugby returned in 2016 as Rugby Sevens and sits in this data as a separate sport, so the Rugby row ending in 1924 understates it. Baseball and softball returned at Tokyo 2020, after this dataset ends.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Art Competitions did not return. Medals were awarded for art at seven Games between 1912 and 1948, and 1,814 people competed for them.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
