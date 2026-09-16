@@ -1,0 +1,37 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "name": "fed3ac315297e0158d0d",
+  "position": {
+    "x": 0,
+    "y": 0,
+    "z": 2000,
+    "height": 74.8936170212766,
+    "width": 1280,
+    "tabOrder": 2000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Medals per 100 athletes sent, for the 80 countries that have fielded 200 or more competitors. Bubbles are sized by that rate, not by medal count, so a large bubble means efficient rather than successful: Ethiopia has 53 medals and the United States 2,823. Russia's figure includes Soviet results and Germany's includes East Germany, since the source maps both to modern states.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "12pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

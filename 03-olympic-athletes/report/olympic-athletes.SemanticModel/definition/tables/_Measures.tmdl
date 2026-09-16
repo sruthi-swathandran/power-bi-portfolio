@@ -71,6 +71,18 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Avg Height Women' = ```
+			CALCULATE(AVERAGE(Entries[Height]), Athlete[Sex] = "F") 
+			```
+		lineageTag: 68ee94f5-4a0d-4b5b-b58c-f3cb45498ae4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Avg Height Men' = CALCULATE(AVERAGE(Entries[Height]), Athlete[Sex] = "M")
+		lineageTag: 75a89e80-15bf-4428-b432-47535067ccad
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =

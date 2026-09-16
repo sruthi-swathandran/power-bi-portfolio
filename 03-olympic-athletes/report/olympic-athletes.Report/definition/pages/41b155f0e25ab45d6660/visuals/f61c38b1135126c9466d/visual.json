@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
-  "name": "cd5728c340c3815117ad",
+  "name": "f61c38b1135126c9466d",
   "position": {
-    "x": 976.53495440729489,
-    "y": 74.8936170212766,
-    "z": 0,
-    "height": 644.86322188449856,
-    "width": 303.46504559270517,
-    "tabOrder": 0
+    "x": 684.741641337386,
+    "y": 69.057750759878417,
+    "z": 1000,
+    "height": 417.26443768996961,
+    "width": 595.258358662614,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "barChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Country"
+                      "Entity": "Event"
                     }
                   },
-                  "Property": "country"
+                  "Property": "Sport"
                 }
               },
-              "queryRef": "Country.country",
-              "nativeQueryRef": "country",
+              "queryRef": "Event.Sport",
+              "nativeQueryRef": "Sport",
               "active": true
             }
           ]
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Medals per 100 Athletes"
+                  "Property": "Avg Height cm"
                 }
               },
-              "queryRef": "_Measures.Medals per 100 Athletes",
-              "nativeQueryRef": "Medals per 100 Athletes"
+              "queryRef": "_Measures.Avg Height cm",
+              "nativeQueryRef": "Avg Height cm"
             }
           ]
         }
@@ -61,7 +61,7 @@
                     "Entity": "_Measures"
                   }
                 },
-                "Property": "Medals per 100 Athletes"
+                "Property": "Avg Height cm"
               }
             },
             "direction": "Descending"
@@ -70,6 +70,21 @@
         "isDefaultSort": true
       }
     },
+    "objects": {
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          }
+        }
+      ]
+    },
     "visualContainerObjects": {
       "title": [
         {
@@ -77,7 +92,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Thirteen countries exceed 14 medals per 100 athletes'"
+                  "Value": "'The tallest sports average 181 to 191 centimetres'"
                 }
               }
             }
@@ -90,15 +105,15 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e9b47460d8077156e83b",
+        "name": "2e66866d1898b006b8ca",
         "field": {
           "Column": {
             "Expression": {
               "SourceRef": {
-                "Entity": "Country"
+                "Entity": "Event"
               }
             },
-            "Property": "country"
+            "Property": "Sport"
           }
         },
         "type": "TopN",
@@ -113,8 +128,8 @@
                     "Version": 2,
                     "From": [
                       {
-                        "Name": "c",
-                        "Entity": "Country",
+                        "Name": "e",
+                        "Entity": "Event",
                         "Type": 0
                       },
                       {
@@ -128,10 +143,10 @@
                         "Column": {
                           "Expression": {
                             "SourceRef": {
-                              "Source": "c"
+                              "Source": "e"
                             }
                           },
-                          "Property": "country"
+                          "Property": "Sport"
                         },
                         "Name": "field"
                       }
@@ -146,20 +161,20 @@
                                 "Source": "_"
                               }
                             },
-                            "Property": "Medals per 100 Athletes"
+                            "Property": "Avg Height cm"
                           }
                         }
                       }
                     ],
-                    "Top": 15
+                    "Top": 10
                   }
                 }
               },
               "Type": 2
             },
             {
-              "Name": "c",
-              "Entity": "Country",
+              "Name": "e",
+              "Entity": "Event",
               "Type": 0
             }
           ],
@@ -172,10 +187,10 @@
                       "Column": {
                         "Expression": {
                           "SourceRef": {
-                            "Source": "c"
+                            "Source": "e"
                           }
                         },
-                        "Property": "country"
+                        "Property": "Sport"
                       }
                     }
                   ],
@@ -191,7 +206,7 @@
         }
       },
       {
-        "name": "00c98fcf5b4e0c65ea57",
+        "name": "0416dfb3a0593c4b9453",
         "field": {
           "Measure": {
             "Expression": {
@@ -199,7 +214,7 @@
                 "Entity": "_Measures"
               }
             },
-            "Property": "Athletes"
+            "Property": "Entries"
           }
         },
         "type": "Advanced",
@@ -216,7 +231,7 @@
             {
               "Condition": {
                 "Comparison": {
-                  "ComparisonKind": 1,
+                  "ComparisonKind": 2,
                   "Left": {
                     "Measure": {
                       "Expression": {
@@ -224,12 +239,12 @@
                           "Source": "_"
                         }
                       },
-                      "Property": "Athletes"
+                      "Property": "Entries"
                     }
                   },
                   "Right": {
                     "Literal": {
-                      "Value": "200L"
+                      "Value": "500L"
                     }
                   }
                 }

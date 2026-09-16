@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
-  "name": "9223ec0e64a9972ee404",
+  "name": "ca453a19c224206e0326",
   "position": {
-    "x": 24.316109422492403,
-    "y": 46.68693009118541,
-    "z": 0,
-    "height": 673.06990881458967,
-    "width": 1010.5775075987842,
-    "tabOrder": 0
+    "x": 0,
+    "y": 74.8936170212766,
+    "z": 1000,
+    "height": 644.86322188449856,
+    "width": 976.53495440729489,
+    "tabOrder": 1000
   },
   "visual": {
-    "visualType": "filledMap",
+    "visualType": "map",
     "query": {
       "queryState": {
         "Category": {
@@ -32,7 +32,7 @@
             }
           ]
         },
-        "Tooltips": {
+        "Size": {
           "projections": [
             {
               "field": {
@@ -47,6 +47,24 @@
               },
               "queryRef": "_Measures.Medals per 100 Athletes",
               "nativeQueryRef": "Medals per 100 Athletes"
+            }
+          ]
+        },
+        "Tooltips": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Athletes"
+                }
+              },
+              "queryRef": "_Measures.Athletes",
+              "nativeQueryRef": "Athletes"
             },
             {
               "field": {
@@ -61,83 +79,37 @@
               },
               "queryRef": "_Measures.Medals",
               "nativeQueryRef": "Medals"
-            },
-            {
-              "field": {
-                "Measure": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "_Measures"
-                    }
-                  },
-                  "Property": "Athletes"
-                }
-              },
-              "queryRef": "_Measures.Athletes",
-              "nativeQueryRef": "Athletes"
             }
           ]
         }
       }
     },
     "objects": {
-      "dataPoint": [
+      "bubbles": [
         {
           "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "FillRule": {
-                      "Input": {
-                        "Measure": {
-                          "Expression": {
-                            "SourceRef": {
-                              "Entity": "_Measures"
-                            }
-                          },
-                          "Property": "Medals per 100 Athletes"
-                        }
-                      },
-                      "FillRule": {
-                        "linearGradient2": {
-                          "min": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#f3b4dc'"
-                              }
-                            }
-                          },
-                          "max": {
-                            "color": {
-                              "Literal": {
-                                "Value": "'#12239E'"
-                              }
-                            }
-                          },
-                          "nullColoringStrategy": {
-                            "strategy": {
-                              "Literal": {
-                                "Value": "'asZero'"
-                              }
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
+            "bubbleSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "-25L"
                 }
               }
             }
-          },
-          "selector": {
-            "data": [
-              {
-                "dataViewWildcard": {
-                  "matchingOption": 1
+          }
+        }
+      ]
+    },
+    "visualContainerObjects": {
+      "title": [
+        {
+          "properties": {
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Ethiopia, Jamaica and Kenya convert athletes into medals at superpower rates'"
                 }
               }
-            ]
+            }
           }
         }
       ]
@@ -147,7 +119,7 @@
   "filterConfig": {
     "filters": [
       {
-        "name": "e7c0aeed00181a709ad0",
+        "name": "04a24998215092d06a71",
         "field": {
           "Measure": {
             "Expression": {
