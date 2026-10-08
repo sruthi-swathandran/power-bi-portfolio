@@ -1,0 +1,104 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "name": "fc3e29b569543bd27dbb",
+  "position": {
+    "x": 693,
+    "y": 328,
+    "z": 1003,
+    "height": 392,
+    "width": 587,
+    "tabOrder": 1003
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Decoupled means GDP higher and emissions lower than at the baseline year, for countries emitting at least 20 Mt at that baseline. The slider moves the baseline. 2018 is fixed, because the GDP series stops there.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Share of Fall by 1998 separates decarbonisation from collapse. Above 100% means emissions had already fallen below their 2018 level by 1998 and then partly recovered: Russia 128%, Azerbaijan 117%, Estonia 105%, Belarus 104%. Negative means emissions rose before they fell, which a transition collapse cannot produce: Japan -320%, the Netherlands -430%, France -29%.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The test catches early collapses and not late ones. Venezuela appears at -235% because its emissions rose until 2014 and then fell alongside its economy. One measure cannot separate every case, and this one is not claimed to.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Moving the baseline from 1990 to 2000 removes Russia, Poland, Belarus, Estonia, Lithuania and Azerbaijan from the list. The count barely moves, because other countries join as they turn. The composition is the finding, not the total.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The scatter is clipped at 400% GDP growth and 200% emissions growth. A few rapid industrialisers sit beyond those bounds, and their position is not in question.",
+                    "textStyle": {
+                      "fontWeight": "bold"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

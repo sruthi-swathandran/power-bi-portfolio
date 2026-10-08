@@ -1,0 +1,28 @@
+table 'Baseline Year'
+	lineageTag: d1b236c4-bd83-487d-9106-e722b9761f56
+
+	measure 'Baseline Year Value' = SELECTEDVALUE('Baseline Year'[Baseline Year], 1990)
+		formatString: 0
+		lineageTag: 2f8fb1df-3e5f-4b7d-8d7d-120badca4a70
+
+	column 'Baseline Year'
+		dataType: int64
+		formatString: 0
+		lineageTag: d37bb1ed-5e1f-4e18-8954-0c8e0b230fdd
+		summarizeBy: none
+		isDataTypeInferred
+		sourceColumn: [Value]
+
+		extendedProperty ParameterMetadata =
+				{
+				  "version": 0
+				}
+
+		annotation SummarizationSetBy = User
+
+	partition 'Baseline Year' = calculated
+		mode: import
+		source = GENERATESERIES(1990, 2010, 1)
+
+	annotation PBI_Id = 29e9b96632d74d5984bd3b945ccee050
+

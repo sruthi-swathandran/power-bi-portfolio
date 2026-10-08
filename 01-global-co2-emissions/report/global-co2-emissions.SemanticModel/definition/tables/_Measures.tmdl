@@ -151,6 +151,69 @@ table _Measures
 			    & ": emissions produced against emissions consumed"
 		lineageTag: 91a6257d-d7a6-4d8a-acaf-4d31d6bb643f
 
+	measure Baseline = SELECTEDVALUE('Baseline Year'[Baseline Year], 1990)
+		lineageTag: 80730e09-e920-40fa-8a00-91e09c736f89
+
+	measure 'CO2 at Baseline' =
+			
+			VAR BaseYear = [Baseline Year Value]
+			RETURN CALCULATE([CO2], FILTER(ALL(Year), Year[year] = BaseYear))
+		lineageTag: 1f36498c-c15b-45f7-989c-3c52cc81f939
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GDP at Baseline' =
+			
+			VAR BaseYear = [Baseline Year Value]
+			RETURN CALCULATE([GDP], FILTER(ALL(Year), Year[year] = BaseYear))
+		lineageTag: d74f53f7-0323-4aff-bd5c-e8848e46e681
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CO2 at 2018' = CALCULATE([CO2], ALL(Year), Year[year] = 2018)
+		lineageTag: 8320d08d-1d60-4e60-b5ce-410052edada8
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'GDP at 2018' = CALCULATE([GDP], ALL(Year), Year[year] = 2018)
+		lineageTag: 656d6037-1e10-4fb3-816f-258732818a00
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CO2 at 1998' = CALCULATE([CO2], ALL(Year), Year[year] = 1998)
+		lineageTag: a4010636-e32e-42da-84ae-b59c2cc8e103
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CO2 Change from Baseline' = DIVIDE([CO2 at 2018], [CO2 at Baseline]) - 1
+		formatString: 0%;-0%;0%
+		lineageTag: 9164b1ba-b20e-4628-a1b8-631332b0f912
+
+	measure 'GDP Change from Baseline' = DIVIDE([GDP at 2018], [GDP at Baseline]) - 1
+		formatString: 0%;-0%;0%
+		lineageTag: 2b6ff32b-0f99-41c7-8df0-13783d5c4974
+
+	measure 'Share of Fall by 1998' =
+			
+			VAR TotalFall = [CO2 at Baseline] - [CO2 at 2018]
+			VAR EarlyFall = [CO2 at Baseline] - [CO2 at 1998]
+			RETURN IF(TotalFall > 0, DIVIDE(EarlyFall, TotalFall))
+		formatString: 0%;-0%;0%
+		lineageTag: b966e16d-3154-4b27-9024-55fca222aa2b
+
+	measure 'Decoupled Countries' =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(Country[country]),
+			        [GDP Change from Baseline] > 0
+			            && [CO2 Change from Baseline] < 0
+			            && [CO2 at Baseline] >= 20
+			    )
+			)
+		formatString: 0
+		lineageTag: bedc13b4-b357-4ca3-871a-8644a7b9195b
+
 	partition _Measures = m
 		mode: import
 		source =
