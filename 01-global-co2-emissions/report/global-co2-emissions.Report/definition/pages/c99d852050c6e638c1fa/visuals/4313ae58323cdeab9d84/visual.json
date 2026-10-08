@@ -1,0 +1,70 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "name": "4313ae58323cdeab9d84",
+  "position": {
+    "x": 0,
+    "y": 634.317998385795,
+    "z": 4001,
+    "height": 85.746569814366424,
+    "width": 1280,
+    "tabOrder": 4001
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Consumption emissions exist only for 1990 to 2020 and for 120 countries, so this page covers less of the world and less of the period than the rest of the report.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "They are also modelled rather than measured. Production emissions come from fuel sales; consumption emissions are estimated by tracing goods through international input-output tables, which carries its own uncertainty.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Singapore is clipped on the map. It imports 379% of its own production emissions, far beyond the top band, because it consumes far more than a city-state of its size produces.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The United Kingdom cut production emissions 45.8% between 1990 and 2020 and consumption emissions 30.6%. A third of the apparent reduction is accounted for by imports rather than by anything that happened in Britain.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

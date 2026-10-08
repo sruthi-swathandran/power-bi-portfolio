@@ -1,0 +1,40 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "c99d852050c6e638c1fa",
+  "displayName": "Trade",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280,
+  "objects": {
+    "outspacePane": [
+      {
+        "properties": {
+          "width": {
+            "expr": {
+              "Literal": {
+                "Value": "182L"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "visualInteractions": [
+    {
+      "source": "910d98c0b61a69761c9e",
+      "target": "6ef73a8d638ac4be54b2",
+      "type": "NoFilter"
+    },
+    {
+      "source": "910d98c0b61a69761c9e",
+      "target": "dc22bd2ae37a3146e587",
+      "type": "NoFilter"
+    },
+    {
+      "source": "910d98c0b61a69761c9e",
+      "target": "d47b6644a9b76a5ad373",
+      "type": "NoFilter"
+    }
+  ]
+}

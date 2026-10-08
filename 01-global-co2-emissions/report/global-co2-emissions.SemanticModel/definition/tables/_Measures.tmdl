@@ -129,6 +129,28 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'CO2 in 1990' = CALCULATE([CO2], ALL(Year), Year[year] = 1990)
+		formatString: #,0
+		lineageTag: be680289-828b-4f4f-88c8-616f8ff157bb
+
+	measure 'Consumption CO2 in 1990' = CALCULATE([Consumption CO2], ALL(Year), Year[year] = 1990)
+		formatString: #,0
+		lineageTag: 33fab93f-b53b-4def-8a29-2da4d82af045
+
+	measure 'CO2 Change since 1990' = DIVIDE([CO2], [CO2 in 1990]) - 1
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 1fcb247e-843e-4914-8433-dbba1ebc0525
+
+	measure 'Consumption Change since 1990' = DIVIDE([Consumption CO2], [Consumption CO2 in 1990]) - 1
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: c71b14a6-2210-4226-aa81-686d87f0df76
+
+	measure 'Trade Line Title' =
+			
+			SELECTEDVALUE(Country[country], "All countries selected")
+			    & ": emissions produced against emissions consumed"
+		lineageTag: 91a6257d-d7a6-4d8a-acaf-4d31d6bb643f
+
 	partition _Measures = m
 		mode: import
 		source =
