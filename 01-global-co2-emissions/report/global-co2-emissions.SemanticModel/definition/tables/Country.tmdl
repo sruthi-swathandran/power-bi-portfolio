@@ -12,6 +12,7 @@ table Country
 	column iso_code
 		dataType: string
 		lineageTag: 7bb900f0-9921-423f-821e-03ccb24eed0c
+		dataCategory: County
 		summarizeBy: none
 		sourceColumn: iso_code
 

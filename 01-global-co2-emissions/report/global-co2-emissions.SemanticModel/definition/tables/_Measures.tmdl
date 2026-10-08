@@ -120,6 +120,15 @@ table _Measures
 		formatString: 0.0%;-0.0%;0.0%
 		lineageTag: 5922c95f-5be7-495c-87db-7c9b54524a3e
 
+	measure 'Share of Global Cumulative CO2' = DIVIDE([Cumulative CO2], [Global Cumulative CO2])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: ab1ba0e9-600b-4215-b071-99a37819b970
+
+	measure 'Responsibility Ratio' = DIVIDE([Share of Global CO2], [Share of Global Cumulative CO2])
+		lineageTag: 4665341c-eb95-4587-b115-6724a64d4d6f
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =
