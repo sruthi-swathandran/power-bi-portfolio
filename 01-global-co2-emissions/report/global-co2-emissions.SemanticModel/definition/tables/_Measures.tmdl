@@ -1,0 +1,134 @@
+table _Measures
+	lineageTag: 7072fbf8-7535-4c2a-aa7a-7b385cd2a017
+
+	measure CO2 = SUM(Emissions[co2])
+		formatString: #,0
+		lineageTag: 95f7d16a-a077-410f-8ffb-0919659b2c16
+
+	measure Population = SUM(Emissions[population])
+		formatString: #,0
+		lineageTag: 6917f230-8b04-44fa-8564-d8907cd93e22
+
+	measure 'CO2 per Capita' = DIVIDE([CO2] * 1000000, [Population])
+		formatString: 0.00
+		lineageTag: c5abcfe3-b7a6-4901-ad75-b44b5185187c
+
+	measure 'Global CO2' = CALCULATE(SUM(Emissions[co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: 7d69d068-2697-44a5-b16a-d6cd37787d75
+
+	measure 'Share of Global CO2' = DIVIDE([CO2], [Global CO2])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 520ed2e7-f039-4ab5-85d1-ef6b646d5302
+
+	measure 'Cumulative CO2' = CALCULATE(SUM(Emissions[cumulative_co2]), Year[year] = MAX(Year[year]))
+		formatString: #,0
+		lineageTag: ee8abc18-534d-496d-b88a-5ec1ea562ec0
+
+	measure 'Consumption CO2' = SUM(Emissions[consumption_co2])
+		formatString: #,0
+		lineageTag: ca0e72da-db19-41e7-8e92-3f8470222dc3
+
+	measure 'Trade CO2' = SUM(Emissions[trade_co2])
+		formatString: #,0
+		lineageTag: 431a9c1a-6fd0-4204-a35f-5009c66e0e21
+
+	measure 'Trade Balance %' = DIVIDE([Trade CO2], [CO2])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 9455159a-bf94-47eb-804b-02bc698a824e
+
+	measure GDP = SUM(Emissions[gdp])
+		formatString: 0
+		lineageTag: ae3d7f0a-04dd-40c3-a07c-bf34fc4baa0f
+
+	measure 'CO2 per GDP' = DIVIDE([CO2] * 1000000000, [GDP])
+		formatString: 0.000
+		lineageTag: 8743855e-d686-4342-8c6b-273dd796e7e1
+
+	measure 'Coal CO2' = SUM(Emissions[coal_co2])
+		formatString: #,0
+		lineageTag: 18554acc-54ab-4fbd-b817-e2a32fb42836
+
+	measure 'Oil CO2' = SUM(Emissions[oil_co2])
+		formatString: #,0
+		lineageTag: 0da2968a-ccb4-490b-b4a7-3e1f67026f97
+
+	measure 'Gas CO2' = SUM(Emissions[gas_co2])
+		formatString: #,0
+		lineageTag: 59dea1df-d337-4b2c-a0ab-8c43fb964187
+
+	measure 'Cement CO2' = SUM(Emissions[cement_co2])
+		formatString: #,0
+		lineageTag: 0795e99a-74db-47ab-a88a-b3c2d239de27
+
+	measure 'Flaring CO2' = ```
+			SUM(Emissions[flaring_co2]) 
+			```
+		formatString: #,0
+		lineageTag: 8fca496f-ccb0-4a35-9dca-2fff0cbe04e9
+
+	measure 'Land Use CO2' = SUM(Emissions[land_use_change_co2])
+		formatString: #,0
+		lineageTag: 283c2430-e00a-403b-89ce-8e5171b85b7d
+
+	measure 'Countries with Data' = CALCULATE(DISTINCTCOUNT(Emissions[country]), NOT ISBLANK(Emissions[co2]))
+		formatString: 0
+		lineageTag: 1bac4029-a094-4ecc-9dde-e01e30290885
+
+	measure 'Global Cumulative CO2' =
+			
+			CALCULATE(
+			    SUM(Emissions[cumulative_co2]),
+			    ALL(Country),
+			    Country[country] = "World",
+			    Year[year] = MAX(Year[year])
+			)
+		formatString: #,0
+		lineageTag: 0918edce-ee96-4655-8693-adf559b75b40
+
+	measure 'Global Coal CO2' = CALCULATE(SUM(Emissions[coal_co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: 73aaa2ce-4ef2-40d8-8f35-594302923c97
+
+	measure 'Global Oil CO2' = CALCULATE(SUM(Emissions[oil_co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: cd639c64-1731-472e-be0f-47f6ddb380ec
+
+	measure 'Global Gas CO2' = CALCULATE(SUM(Emissions[gas_co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: cfe5047a-f3d9-4443-9601-11c4345660c0
+
+	measure 'Global Cement CO2' = CALCULATE(SUM(Emissions[cement_co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: 479d3bf3-7deb-42b1-9126-fffd7fb856f2
+
+	measure 'Global Flaring CO2' = CALCULATE(SUM(Emissions[flaring_co2]), ALL(Country), Country[country] = "World")
+		formatString: #,0
+		lineageTag: 6f1fe04c-1770-46d3-a45f-42ad40692b2d
+
+	measure 'Top 10 Share' =
+			
+			VAR Top10 =
+			    TOPN(
+			        10,
+			        CALCULATETABLE(VALUES(Country[country]), ALL(Country), Country[entity_type] = "Country"),
+			        [CO2],
+			        DESC
+			    )
+			RETURN
+			    DIVIDE(CALCULATE([CO2], Top10), [Global CO2])
+		formatString: 0.0%;-0.0%;0.0%
+		lineageTag: 5922c95f-5be7-495c-87db-7c9b54524a3e
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Changed Type" = Table.TransformColumnTypes(Source,{{"Column1", type text}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_ResultType = Table
+

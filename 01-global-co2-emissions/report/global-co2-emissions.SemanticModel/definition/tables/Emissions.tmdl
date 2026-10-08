@@ -1,0 +1,233 @@
+table Emissions
+	lineageTag: 9267f1f7-0c79-4f16-b18c-de498263a5f1
+
+	column country
+		dataType: string
+		lineageTag: ed1133fb-0263-4fc7-b60d-91b394827ff0
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column year
+		dataType: int64
+		formatString: 0
+		lineageTag: 9deb94dd-a2a0-4943-8949-2552b5e70fed
+		summarizeBy: none
+		sourceColumn: year
+
+		annotation SummarizationSetBy = Automatic
+
+	column population
+		dataType: int64
+		formatString: 0
+		lineageTag: 7d048325-22f4-4ece-91b0-1f927de43fa9
+		summarizeBy: sum
+		sourceColumn: population
+
+		annotation SummarizationSetBy = Automatic
+
+	column gdp
+		dataType: double
+		lineageTag: b25529ce-3035-495a-9976-9d4c557de26f
+		summarizeBy: sum
+		sourceColumn: gdp
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cement_co2
+		dataType: double
+		lineageTag: 4a4330dd-8d21-402b-9258-38355b9825cd
+		summarizeBy: sum
+		sourceColumn: cement_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column co2
+		dataType: double
+		lineageTag: 2872221e-f0ca-415c-b269-30cf21a71fbc
+		summarizeBy: sum
+		sourceColumn: co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column co2_including_luc
+		dataType: double
+		lineageTag: 9be7c247-439c-4aa5-b253-38624d1579ca
+		summarizeBy: sum
+		sourceColumn: co2_including_luc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column coal_co2
+		dataType: double
+		lineageTag: dcdabcc2-10a5-407a-9654-d68a5663ee6c
+		summarizeBy: sum
+		sourceColumn: coal_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column consumption_co2
+		dataType: double
+		lineageTag: 808c8a4a-6da1-4046-a726-21d4d38d3e42
+		summarizeBy: sum
+		sourceColumn: consumption_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_co2
+		dataType: double
+		lineageTag: 03e98641-ab58-4624-bb1c-7551f4f03358
+		summarizeBy: sum
+		sourceColumn: cumulative_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column cumulative_co2_including_luc
+		dataType: double
+		lineageTag: e7d69bf4-7175-4978-aaa4-726f02ed83f5
+		summarizeBy: sum
+		sourceColumn: cumulative_co2_including_luc
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column flaring_co2
+		dataType: double
+		lineageTag: 034ab5e7-f050-4e0d-b280-0d8fd7464526
+		summarizeBy: sum
+		sourceColumn: flaring_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column gas_co2
+		dataType: double
+		lineageTag: 58f95c37-128f-416d-96c0-b7ca42d5f505
+		summarizeBy: sum
+		sourceColumn: gas_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column land_use_change_co2
+		dataType: double
+		lineageTag: 0548d520-9a21-46b0-bc48-b6acfd4b7608
+		summarizeBy: sum
+		sourceColumn: land_use_change_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column methane
+		dataType: double
+		lineageTag: c98d358f-7cf1-4320-8aa6-a9a91417a615
+		summarizeBy: sum
+		sourceColumn: methane
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column nitrous_oxide
+		dataType: double
+		lineageTag: f6123113-dc77-47b7-bcf5-af03b43182aa
+		summarizeBy: sum
+		sourceColumn: nitrous_oxide
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column oil_co2
+		dataType: double
+		lineageTag: a2597f2c-4c15-4e85-a8cb-a2426c0b6383
+		summarizeBy: sum
+		sourceColumn: oil_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column other_industry_co2
+		dataType: double
+		lineageTag: 732f0fbf-089d-4c39-ac2f-4eb8f7a1458a
+		summarizeBy: sum
+		sourceColumn: other_industry_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column primary_energy_consumption
+		dataType: double
+		lineageTag: 2e563973-8791-425c-8e0f-ecfb4cbef251
+		summarizeBy: sum
+		sourceColumn: primary_energy_consumption
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column temperature_change_from_co2
+		dataType: double
+		lineageTag: 579ca0b7-08e4-4384-b687-2d03f7589459
+		summarizeBy: sum
+		sourceColumn: temperature_change_from_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_ghg
+		dataType: double
+		lineageTag: 98a48c7b-b6c7-4f6d-81cc-efd2e36eafc5
+		summarizeBy: sum
+		sourceColumn: total_ghg
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column trade_co2
+		dataType: double
+		lineageTag: 73f8c46a-c579-4a7a-83b5-0cb6e355a80c
+		summarizeBy: sum
+		sourceColumn: trade_co2
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Emissions = m
+		mode: import
+		source =
+				let
+				    Source = co2_source,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"country", "year", "population", "gdp", "cement_co2", "co2", "co2_including_luc", "coal_co2", "consumption_co2", "cumulative_co2", "cumulative_co2_including_luc", "flaring_co2", "gas_co2", "land_use_change_co2", "methane", "nitrous_oxide", "oil_co2", "other_industry_co2", "primary_energy_consumption", "temperature_change_from_co2", "total_ghg", "trade_co2"}),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Removed Other Columns",{{"gdp", type number}, {"cement_co2", type number}, {"co2", type number}, {"co2_including_luc", type number}, {"coal_co2", type number}, {"consumption_co2", type number}, {"cumulative_co2", type number}, {"cumulative_co2_including_luc", type number}, {"flaring_co2", type number}, {"gas_co2", type number}, {"land_use_change_co2", type number}, {"methane", type number}, {"nitrous_oxide", type number}, {"oil_co2", type number}, {"other_industry_co2", type number}, {"primary_energy_consumption", type number}, {"temperature_change_from_co2", type number}, {"total_ghg", type number}, {"trade_co2", type number}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

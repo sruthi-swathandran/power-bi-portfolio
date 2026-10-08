@@ -1,0 +1,59 @@
+table Country
+	lineageTag: 422de05c-3ee9-4479-8285-be1b0d3a981d
+
+	column country
+		dataType: string
+		lineageTag: 7e1fde1a-b593-4acc-aca3-d11dcb3123e2
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column iso_code
+		dataType: string
+		lineageTag: 7bb900f0-9921-423f-821e-03ccb24eed0c
+		summarizeBy: none
+		sourceColumn: iso_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column entity_type
+		dataType: string
+		lineageTag: d94fab4a-1664-400b-98b2-b8971f9d2ee9
+		summarizeBy: none
+		sourceColumn: entity_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_continent
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 1b2b0d9b-d6f4-4fc8-acca-37634d924e59
+		summarizeBy: none
+		sourceColumn: is_continent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Country = m
+		mode: import
+		source =
+				let
+				    Source = co2_source,
+				    #"Removed Other Columns" = Table.SelectColumns(Source,{"country", "iso_code"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Other Columns"),
+				    #"Added Custom" = Table.AddColumn(#"Removed Duplicates", "entity_type", each if [iso_code] <> null and [iso_code] <> "" then "Country"
+				else if [country] = "Kosovo" then "Country"
+				else if [country] = "World" then "World"
+				else if [country] = "International transport" then "International transport"
+				else if Text.Contains([country], "(GCP)") or Text.Contains([country], "(Jones et al. 2023)") then "Alternative series"
+				else if Text.Contains([country], "income countries") then "Income group"
+				else "Region or union"),
+				    #"Added Custom1" = Table.AddColumn(#"Added Custom", "is_continent", each List.Contains({"Africa","Asia","Europe","North America","South America","Oceania"}, [country])),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Added Custom1",{{"entity_type", type text}, {"is_continent", type logical}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

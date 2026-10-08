@@ -1,0 +1,8 @@
+relationship AutoDetected_79f18381-c8ec-4b04-9b0e-a3089dcfb142
+	fromColumn: Emissions.country
+	toColumn: Country.country
+
+relationship AutoDetected_c87f679d-3fc2-4f88-af65-2398bc10a4f1
+	fromColumn: Emissions.year
+	toColumn: Year.year
+

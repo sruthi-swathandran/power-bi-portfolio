@@ -1,0 +1,8 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/page/1.2.0/schema.json",
+  "name": "27b5d07d4a405bcc657e",
+  "displayName": "Long View",
+  "displayOption": "FitToPage",
+  "height": 720,
+  "width": 1280
+}

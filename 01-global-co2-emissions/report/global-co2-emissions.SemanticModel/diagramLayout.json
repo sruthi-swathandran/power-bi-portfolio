@@ -1,0 +1,74 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 795.38305001469371,
+            "y": 5.1553020401549929
+          },
+          "nodeIndex": "Country",
+          "nodeLineageTag": "422de05c-3ee9-4479-8285-be1b0d3a981d",
+          "size": {
+            "height": 176,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 365.20156119318523,
+            "y": 249
+          },
+          "nodeIndex": "Emissions",
+          "nodeLineageTag": "9267f1f7-0c79-4f16-b18c-de498263a5f1",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "Year",
+          "nodeLineageTag": "d10c0ec0-2784-4e6b-8be6-fd599f9544ee",
+          "size": {
+            "height": 128,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 1079.3830500146937,
+            "y": 222.5
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "7072fbf8-7535-4c2a-aa7a-7b385cd2a017",
+          "size": {
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}
