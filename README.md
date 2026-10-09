@@ -20,9 +20,22 @@ file moved.
 
 | # | Project | Domain | Scale | Status |
 |---|---------|--------|-------|--------|
-| 01 | [Global CO2 emissions](./01-global-co2-emissions) | Climate | 50,598 rows, 1750 to 2021 | Not started |
+| 01 | [Global CO2 emissions](./01-global-co2-emissions) | Climate | 50,598 rows, 1750 to 2021 | **Complete** |
 | 02 | [Kickstarter projects](./02-kickstarter-projects) | Crowdfunding | 374,853 rows | **Complete** |
 | 03 | [Olympic athletes](./03-olympic-athletes) | Sport | 271,116 rows normalised into 5 tables | **Complete** |
+
+### Global CO2 emissions
+
+Five pages on 270 years of emissions data, built around three questions that
+turn out to be one argument. Some of what it found:
+
+- More than half of all CO2 ever emitted was released after 1990. The halfway point of 270 years of industrialisation falls in 1993
+- China accounts for 14% of all emissions ever and 31% of today's. The United States, 24% and 13%
+- The United States cut production emissions 8% since 1990 and increased consumption emissions 3%. A third of Britain's larger reduction is imports rather than anything that happened in Britain
+- Twenty-seven countries grew their economies while cutting emissions, and six of them are post-Soviet states whose decline was over by 1998
+- Coal's share of emissions fell from 100% to 40% while its volume almost quadrupled
+
+Full write-up in the [project README](./01-global-co2-emissions).
 
 ### Kickstarter projects
 
@@ -69,7 +82,20 @@ refresh rather than as measures.
 mislead, and denominators named as their own measures so the definitional choices
 behind a rate stay visible. `SUMMARIZE` where a count over a dimension column
 would otherwise ignore the fact table's filters, and calculated columns only
-where a value has to exist per row before anything can filter on it.
+where a value has to exist per row before anything can filter on it. `TOPN`
+inside a measure where a ranking has to recalculate per year rather than be
+fixed at today's list, and `VAR` where a measure has to be resolved before
+`CALCULATE` can filter on it.
+
+**What-if parameters.** A numeric range driving a baseline year, so a reader can
+move the comparison point and watch which countries drop out of a finding. A
+result that survives being poked at is worth more than one presented as settled.
+
+**Deciding what a ratio is.** Source files routinely ship pre-calculated
+per-capita and share-of-total columns. None of them can be summed or averaged,
+so all of them are deleted from the model and rebuilt as measures. Averaging
+Qatar's 35.6 tonnes per person and China's 8.0 gives 21.8, which describes
+nobody.
 
 **Counting at the right grain.** Source files rarely arrive at the grain a
 question needs. Distinguishing medals from medal-winning entries changes the
