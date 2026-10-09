@@ -1,0 +1,73 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.3.0/schema.json",
+  "name": "db3994b939235f9e13d2",
+  "position": {
+    "x": 0,
+    "y": 619.55773955773964,
+    "z": 4000,
+    "height": 100.63882063882065,
+    "width": 1280,
+    "tabOrder": 4000
+  },
+  "visual": {
+    "visualType": "textbox",
+    "objects": {
+      "general": [
+        {
+          "properties": {
+            "paragraphs": [
+              {
+                "textRuns": [
+                  {
+                    "value": "Emissions per person use no population floor. The top of that list is dominated by small petrostates, which is the finding rather than a distortion: Qatar emits 35.6 tonnes per person against a world average of 4.7.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "The scatter is clipped at 6,000 Mt, which excludes China at 11,472. Its position is not in doubt and including it compresses every other country into the left edge.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              {
+                "textRuns": [
+                  {
+                    "value": "Page 1 showed coal falling from 100% of emissions to 40%. This page shows the other half of that: the share fell because oil and gas grew faster, not because coal shrank. Coal emissions in 2021 were the highest ever recorded.",
+                    "textStyle": {
+                      "fontWeight": "bold",
+                      "fontSize": "9pt"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
